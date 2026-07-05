@@ -1,1 +1,132 @@
+/*
+==========================================================
+TechLab365 Website
+Temporary Landing Page
 
+Author: Antonio Gabriele Rizzo
+
+Version: 0.1.0
+==========================================================
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  font-family: Calibri, "Segoe UI", Arial, sans-serif;
+}
+
+body{
+
+    background-image:url("../img/backgrounds/techlab365background.png");
+
+    background-size:100% auto;
+
+    background-position:top center;
+
+    background-repeat:no-repeat;
+
+    background-color:#061224;
+
+}
+
+.landing-page {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(5, 15, 30, 0.45);
+}
+
+.overlay{
+
+    width:100%;
+
+    height:100%;
+
+    position:relative;
+
+}
+
+h1 {
+  font-size: 4rem;
+
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2.2rem;
+
+  font-weight: 300;
+
+  margin-bottom: 35px;
+
+  line-height: 1.3;
+}
+
+.tagline {
+  font-size: 1.4rem;
+
+  font-weight: bold;
+
+  color: #00a8ff;
+
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+
+  color: #d9e7f5;
+
+  margin-bottom: 50px;
+}
+
+.buttons{
+
+    position:absolute;
+
+    bottom:70px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    gap:30px;
+
+}
+
+.buttons a {
+  padding: 16px 40px;
+
+  border: 2px solid #00a8ff;
+
+  border-radius: 10px;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.buttons a:hover {
+  background: #00a8ff;
+}
