@@ -25,18 +25,16 @@ body {
   font-family: Calibri, "Segoe UI", Arial, sans-serif;
 }
 
-body{
+body {
+  background-image: url("../img/backgrounds/c:\Users\anton\Desktop\GitHub\GitHub Banner\techlab365background-V2.png");
 
-    background-image:url("../img/backgrounds/techlab365background.png");
+  background-size: 100% auto;
 
-    background-size:100% auto;
+  background-position: top center;
 
-    background-position:top center;
+  background-repeat: no-repeat;
 
-    background-repeat:no-repeat;
-
-    background-color:#061224;
-
+  background-color: #061224;
 }
 
 .landing-page {
@@ -51,14 +49,12 @@ body{
   background: rgba(5, 15, 30, 0.45);
 }
 
-.overlay{
+.overlay {
+  width: 100%;
 
-    width:100%;
+  height: 100%;
 
-    height:100%;
-
-    position:relative;
-
+  position: relative;
 }
 
 h1 {
@@ -95,20 +91,18 @@ h2 {
   margin-bottom: 50px;
 }
 
-.buttons{
+.buttons {
+  position: absolute;
 
-    position:absolute;
+  bottom: 70px;
 
-    bottom:70px;
+  left: 50%;
 
-    left:50%;
+  transform: translateX(-50%);
 
-    transform:translateX(-50%);
+  display: flex;
 
-    display:flex;
-
-    gap:30px;
-
+  gap: 30px;
 }
 
 .buttons a {
