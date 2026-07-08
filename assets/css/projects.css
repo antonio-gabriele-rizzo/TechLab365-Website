@@ -1,0 +1,172 @@
+/*==================================================
+    GLOBAL
+==================================================*/
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+body{
+
+    margin:0;
+
+    font-family:Calibri,"Segoe UI",Arial,sans-serif;
+
+    color:#EAF3FB;
+
+    line-height:1.8;
+
+    background:
+        linear-gradient(rgba(8,21,35,.60),rgba(8,21,35,.60)),
+        url("../img/backgrounds/about-background.png");
+
+    background-repeat:repeat;
+
+    background-position:top left;
+
+    background-size:700px auto;
+
+    background-color:#081523;
+
+}
+
+/*==================================================
+    HERO
+==================================================*/
+
+.projects-hero{
+
+    position:relative;
+
+    margin-top:-20px;
+
+    padding:15px 50px 25px;
+
+    text-align:center;
+
+    background:linear-gradient(rgba(5,15,30,.88),
+                               rgba(5,15,30,.88));
+
+    border-bottom:2px solid #00A8FF;
+
+}
+
+.projects-logo{
+
+    position:absolute;
+
+    top:40px;
+
+    left:40px;
+
+    width:320px;
+
+    z-index:10;
+
+}
+
+.projects-hero h1{
+
+    font-size:3.2rem;
+
+    color:#F2F2F2;
+
+    text-align:center;
+
+    margin:40px 0 15px;
+
+}
+
+.hero-tagline{
+
+    color:#1EA7FF;
+
+    font-size:1.2rem;
+
+    font-weight:600;
+
+}
+
+/*==================================================
+    MAIN
+==================================================*/
+
+.projects-container{
+
+    width:min(1100px,92%);
+
+    margin:35px auto;
+
+}
+
+/*==================================================
+    CONTENT BOX
+==================================================*/
+
+.content-box{
+
+    background:#102235;
+
+    border:1px solid rgba(0,168,255,.25);
+
+    border-radius:16px;
+
+    padding:30px;
+
+    margin-bottom:35px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+.content-box p{
+
+    text-align:justify;
+
+    line-height:1.8;
+
+    margin-bottom:22px;
+
+}
+
+/*==================================================
+    BUTTONS
+==================================================*/
+
+.button-container{
+
+    text-align:center;
+
+    margin-top:35px;
+
+}
+
+.button-container a{
+
+    display:inline-block;
+
+    padding:16px 42px;
+
+    border:2px solid #00A8FF;
+
+    border-radius:10px;
+
+    color:#FFFFFF;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.button-container a:hover{
+
+    background:#00A8FF;
+
+}
