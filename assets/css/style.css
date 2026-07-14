@@ -43,12 +43,17 @@ Version: 0.1.0
 
 html,
 body {
-  width: 100%;
-  height: 100%;
 
-  overflow: hidden;
+  width:100%;
 
-  font-family: Calibri, "Segoe UI", Arial, sans-serif;
+  min-height:100%;
+
+  overflow-x:hidden;
+
+  overflow-y:auto;
+
+  font-family:Calibri,"Segoe UI",Arial,sans-serif;
+
 }
 
 body {
@@ -63,17 +68,26 @@ body {
   background-color: #061224;
 }
 
-.landing-page {
-  position: relative;
-  width: 100%;
-  height: 100vh;
+.landing-page{
 
-  display: flex;
+    position:relative;
 
-  justify-content: center;
-  align-items: center;
+    width:100%;
 
-  background: rgba(5, 15, 30, 0.45);
+    min-height:100vh;
+
+    height:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(5,15,30,.45);
+
+    padding-bottom:80px;
+
 }
 
 .overlay {
@@ -287,4 +301,328 @@ h2 {
   text-align: justify;
 
   color: #eaf3fb;
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media screen and (max-width:768px){
+
+body{
+
+    background-size:cover;
+    background-position:center top;
+
+}
+
+.home-logo{
+
+    position:absolute;
+    top:15px;
+    left:50%;
+    transform:translateX(-50%);
+    width:320px;
+    max-width:85%;
+    height:auto;
+    z-index:1000;
+
+}
+
+.hero-network{
+
+    display:none;
+
+}
+
+.landing-page{
+
+    display:block;
+    min-height:auto;
+    padding:140px 20px 50px;
+
+}
+
+.hero-content{
+
+    position:static;
+    width:100%;
+    max-width:100%;
+    text-align:center;
+
+}
+
+.hero-content h1{
+
+    font-size:2.3rem;
+    line-height:1.15;
+    margin-bottom:25px;
+
+}
+
+.hero-content h1 span{
+
+    white-space:normal;
+
+}
+
+.hero-specialisation{
+
+    font-size:1.2rem;
+    line-height:1.6;
+    margin-bottom:35px;
+
+}
+
+.hero-icons{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+    justify-items:center;
+    margin-bottom:35px;
+
+}
+
+.hero-icon{
+
+    width:auto;
+
+}
+
+.hero-icon img{
+
+    width:42px;
+    height:42px;
+
+}
+
+.hero-icon span{
+
+    font-size:.9rem;
+
+}
+
+.hero-content h2{
+
+    font-size:2rem;
+    margin-top:20px;
+    margin-bottom:20px;
+
+}
+
+.hero-introduction{
+
+    width:100%;
+    font-size:1rem;
+    line-height:1.9;
+    text-align:justify;
+    text-justify:inter-word;
+    hyphens:auto;
+
+}
+
+.buttons{
+
+    position:static;
+    transform:none;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    width:100%;
+    margin:40px 0;
+
+}
+
+.buttons a{
+
+    width:100%;
+    max-width:320px;
+    margin:0 auto;
+
+}
+
+.work-progress{
+
+    position:static;
+    transform:none;
+    width:100%;
+    max-width:360px;
+    margin:25px auto 0;
+    white-space:normal;
+    text-align:justify;
+    text-justify:inter-word;
+    hyphens:auto;
+    line-height:1.6;
+
+}
+
+}
+
+/* ==========================================================
+   TABLET PORTRAIT (768px - 1024px)
+   REPLACE YOUR CURRENT TABLET MEDIA QUERY WITH THIS ONE
+   ========================================================== */
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media screen and (min-width:769px) and (max-width:1600px) and (hover:none) {
+
+    body{
+        overflow-x:hidden;
+        background-size:cover;
+        background-position:center top;
+    }
+
+    /* LOGO */
+
+    .home-logo{
+
+        width:430px;
+        top:20px;
+        left:50%;
+        transform:translateX(-50%);
+
+    }
+
+    /* HERO CONTENT */
+
+    .hero-content{
+
+        position:absolute;
+
+        top:115px;
+
+        left:55px;
+
+        width:620px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:2.45rem;
+
+        line-height:1.15;
+
+        margin-bottom:28px;
+
+    }
+
+    .hero-specialisation{
+
+        font-size:1.05rem;
+
+        margin-bottom:30px;
+
+    }
+
+    /* ICONS */
+
+    .hero-icons{
+
+        gap:20px;
+
+        margin-bottom:25px;
+
+    }
+
+    .hero-icon img{
+
+        width:36px;
+
+        height:36px;
+
+    }
+
+    .hero-icon span{
+
+        font-size:.78rem;
+
+    }
+
+    /* WELCOME */
+
+    .hero-content h2{
+
+        font-size:1.8rem;
+
+        margin-top:25px;
+
+        margin-bottom:12px;
+
+    }
+
+    .hero-introduction{
+
+        width:620px;
+
+        font-size:.92rem;
+
+        line-height:1.75;
+
+    }
+
+    /* CLOUD IMAGE */
+
+    .hero-network{
+
+        position:absolute;
+
+        width:560px;
+
+        left:690px;
+
+        bottom:140px;
+
+    }
+
+    /* BUTTONS */
+
+    .buttons{
+
+        position:absolute;
+
+        left:50%;
+
+        bottom:160px;
+
+        transform:translateX(-50%);
+
+        display:flex;
+
+        gap:18px;
+
+    }
+
+    .buttons a{
+
+        width:165px;
+
+        padding:13px 20px;
+
+        font-size:.95rem;
+
+    }
+
+    /* FOOTER */
+
+    .work-progress{
+
+        position:absolute;
+
+        bottom:120px;
+
+        left:50%;
+
+        transform:translateX(-50%);
+
+        font-size:.88rem;
+
+        white-space:nowrap;
+
+    }
+
 }

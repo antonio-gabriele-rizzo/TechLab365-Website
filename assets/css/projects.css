@@ -170,3 +170,84 @@ body{
     background:#00A8FF;
 
 }
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media screen and (max-width:768px){
+
+body{
+    overflow-x:hidden;
+}
+
+/* HERO */
+
+.projects-hero{
+    margin-top:0;
+    padding:18px 20px 22px;
+}
+
+.projects-logo{
+    position:static;
+    display:block;
+    width:320px;
+    max-width:88%;
+    margin:0 auto 18px;
+}
+
+.projects-hero h1{
+    font-size:2.2rem;
+    line-height:1.15;
+    margin:0 0 16px;
+}
+
+.hero-tagline{
+    font-size:1.05rem;
+    line-height:1.8;
+    text-align:center;
+    white-space:normal;
+    padding:0 8px;
+}
+
+/* MAIN CONTENT */
+
+.projects-container{
+    width:94%;
+    margin:22px auto;
+}
+
+.content-box{
+    padding:22px;
+    margin-bottom:25px;
+}
+
+.content-box h2{
+    font-size:2rem;
+    margin-bottom:18px;
+}
+
+.content-box p{
+    font-size:1.05rem;
+    line-height:1.9;
+    text-align:justify;
+    text-justify:inter-word;
+    hyphens:auto;
+}
+
+/* BUTTON */
+
+.button-container{
+    margin-top:25px;
+}
+
+.button-container a{
+    display:block;
+    width:100%;
+    max-width:300px;
+    margin:0 auto;
+    padding:15px 20px;
+    font-size:1rem;
+}
+
+}
