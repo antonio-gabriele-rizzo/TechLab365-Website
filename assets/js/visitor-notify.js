@@ -1,55 +1,56 @@
 /*
-============================================================
-TechLab365 Visitor Notification
-Version: 1.0
-
-This file controls the Telegram notification system for
-the About page.
-
-============================================================
-CONFIGURATION GUIDE
-============================================================
-
-enabled
-
-true  = Telegram notifications are enabled.
-
-false = Telegram notifications are completely disabled.
-        The website will not contact the notification
-        service.
-
-------------------------------------------------------------
-
-testMode
-
-true  = Developer Mode.
-
-        Your visits always generate Telegram
-        notifications. Use this while developing or
-        testing the website.
-
-false = Production Mode.
-
-        Your visits are treated the same as every other
-        visitor. Future anti-spam protection will also
-        apply to your visits.
-
-============================================================
-*/
+ * ============================================================
+ * TechLab365 Visitor Notification
+ * ============================================================
+ */
 
 const CONFIG = {
-
-    // Enable or disable the notification system.
-    enabled: true,
-
-    // Enable while developing or testing.
-    testMode: true
-
+    enabled: true
 };
+
+function getCookie(name) {
+
+    const cookies = document.cookie.split(";");
+
+    for (const cookie of cookies) {
+
+        const parts = cookie.trim().split("=");
+
+        if (parts[0] === name) {
+            return parts[1];
+        }
+
+    }
+
+    return null;
+
+}
+
+function createVisitorId() {
+
+    return crypto.randomUUID();
+
+}
+
+function getVisitorId() {
+
+    let visitorId = getCookie("techlab365Visitor");
+
+    if (visitorId) {
+        return visitorId;
+    }
+
+    visitorId = createVisitorId();
+
+    document.cookie =
+        `techlab365Visitor=${visitorId}; max-age=31536000; path=/; SameSite=Lax`;
+
+    return visitorId;
+
+}
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Notification system disabled
     if (!CONFIG.enabled) {
         return;
     }
@@ -58,11 +59,17 @@ document.addEventListener("DOMContentLoaded", () => {
         "https://techlab365-telegram.antoniogabriele-rizzo.workers.dev",
         {
             method: "POST",
+
             cache: "no-store",
+
             keepalive: true,
+
             headers: {
-                "X-Test-Mode": CONFIG.testMode
+
+                "X-Visitor-ID": getVisitorId()
+
             }
+
         }
     ).catch(console.error);
 
