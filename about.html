@@ -232,10 +232,11 @@
     </main>
 
 <script>
-window.addEventListener("pageshow", function () {
+document.addEventListener("DOMContentLoaded", function () {
   fetch("https://techlab365-telegram.antoniogabriele-rizzo.workers.dev", {
     method: "POST",
-    cache: "no-store"
+    cache: "no-store",
+    keepalive: true
   }).catch(console.error);
 });
 </script>
