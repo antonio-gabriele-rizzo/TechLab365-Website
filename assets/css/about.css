@@ -19,7 +19,6 @@ body {
 }
 
 .about-hero {
-
   position: relative;
 
   margin-top: -20px;
@@ -179,17 +178,16 @@ body {
 
 /* ---------- About Logo ---------- */
 
-.about-logo{
+.about-logo {
+  position: absolute;
 
-    position:absolute;
+  top: 35px;
 
-    top:35px;
+  left: 40px;
 
-    left:40px;
+  width: 300px;
 
-    width:300px;
-
-    z-index:10;
+  z-index: 10;
 }
 
 /* ---------- Welcome Section ---------- */
@@ -225,176 +223,155 @@ body {
   text-align: justify;
 }
 
-
 /* ==========================================================
    MOBILE
 ========================================================== */
 
-@media (max-width:768px){
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
 
-body{
-    overflow-x:hidden;
+  .about-hero {
+    padding: 28px 20px 20px;
+  }
+
+  .about-logo {
+    position: static;
+    display: block;
+    width: 310px;
+    max-width: 88%;
+    margin: 8px auto 18px;
+  }
+
+  .about-hero h1 {
+    font-size: 2.05rem;
+    margin: 0 0 14px;
+    line-height: 1.15;
+  }
+
+  .hero-tagline {
+    white-space: normal;
+    text-align: justify;
+    text-align-last: center;
+    font-size: 1.02rem;
+    line-height: 1.8;
+    padding: 0 8px;
+  }
+
+  .about-container {
+    width: 94%;
+    margin: 16px auto;
+  }
+
+  .card {
+    padding: 10px 18px 18px;
+  }
+
+  .card h2 {
+    font-size: 1.65rem;
+
+    margin-top: 0;
+
+    margin-bottom: 8px;
+
+    padding-bottom: 8px;
+  }
+
+  /* ONLY THE FIRST CARD (WELCOME) */
+
+  .about-container .card:first-child h2 {
+    font-size: 1.65rem !important;
+
+    margin: 0 0 6px 0 !important;
+
+    padding-bottom: 6px !important;
+
+    line-height: 1.1 !important;
+  }
+
+  .welcome-container {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 0px;
+
+    margin-top: 12px;
+  }
+
+  .profile-photo {
+    width: 140px;
+    max-width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 18px;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .welcome-text p {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    text-align: justify;
+  }
 }
-
-.about-hero{
-    padding:28px 20px 20px;
-}
-
-.about-logo{
-    position:static;
-    display:block;
-    width:310px;
-    max-width:88%;
-    margin:8px auto 18px;
-}
-
-.about-hero h1{
-    font-size:2.05rem;
-    margin:0 0 14px;
-    line-height:1.15;
-}
-
-.hero-tagline{
-    white-space:normal;
-    text-align:justify;
-    text-align-last:center;
-    font-size:1.02rem;
-    line-height:1.8;
-    padding:0 8px;
-}
-
-.about-container{
-    width:94%;
-    margin:16px auto;
-}
-
-.card{
-
-    padding:10px 18px 18px;
-
-}
-
-.card h2{
-
-    font-size:1.65rem;
-
-    margin-top:0;
-
-    margin-bottom:8px;
-
-    padding-bottom:8px;
-
-}
-
-/* ONLY THE FIRST CARD (WELCOME) */
-
-.about-container .card:first-child h2{
-
-    font-size:1.65rem !important;
-
-    margin:0 0 6px 0 !important;
-
-    padding-bottom:6px !important;
-
-    line-height:1.1 !important;
-
-}
-
-.welcome-container{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    gap:2px;
-
-    margin-top:-6px;
-
-}
-
-.profile-photo{
-
-    width:270px;
-
-    height:auto;
-
-    display:block;
-
-    margin:0 auto;
-
-    border-radius:18px;
-
-    object-fit:cover;
-
-    object-position:center top;
-
-}
-
-.welcome-text p{
-    font-size:1.08rem;
-    line-height:1.85;
-    text-align:justify;
-}
-
-}
-
 
 /* ==========================================================
    TABLET
 ========================================================== */
 
-@media screen and (min-width:769px) and (max-width:1600px) and (hover:none){
+@media screen and (min-width: 769px) and (max-width: 1600px) and (hover: none) {
+  .about-logo {
+    width: 240px;
+    top: 30px;
+    left: 22px;
+  }
 
-.about-logo{
-    width:240px;
-    top:30px;
-    left:22px;
-}
+  .about-hero {
+    padding: 16px 30px 14px;
+  }
 
-.about-hero{
-    padding:16px 30px 14px;
-}
+  .about-hero h1 {
+    margin: 6px 0 10px;
+  }
 
-.about-hero h1{
-    margin:6px 0 10px;
-}
+  .hero-tagline {
+    max-width: 92%;
+    font-size: 1.08rem;
+    line-height: 1.45;
+    margin: 0 auto;
+  }
 
-.hero-tagline{
-    max-width:92%;
-    font-size:1.08rem;
-    line-height:1.45;
-    margin:0 auto;
-}
+  .about-container {
+    width: 92%;
+    margin: 12px auto;
+  }
 
-.about-container{
-    width:92%;
-    margin:12px auto;
-}
+  .card {
+    padding: 22px;
+    margin-bottom: 24px;
+  }
 
-.card{
-    padding:22px;
-    margin-bottom:24px;
-}
+  .card h2 {
+    margin-bottom: 10px;
+  }
 
-.card h2{
-    margin-bottom:10px;
-}
+  .welcome-container {
+    align-items: flex-start;
+    gap: 28px;
+    margin-top: 4px;
+  }
 
-.welcome-container{
-    align-items:flex-start;
-    gap:28px;
-    margin-top:4px;
-}
+  .profile-photo {
+    width: 170px;
+    height: auto;
+  }
 
-.profile-photo{
-    width:170px;
-    height:auto;
-}
-
-.welcome-text p{
-    line-height:1.75;
-}
-
+  .welcome-text p {
+    line-height: 1.75;
+  }
 }
