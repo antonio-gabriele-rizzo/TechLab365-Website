@@ -231,10 +231,13 @@
       </div>
     </main>
 
-    <script>
-      fetch("https://techlab365-telegram.antoniogabriele-rizzo.workers.dev", {
-        method: "POST",
-      }).catch((error) => console.error(error));
-    </script>
+<script>
+window.addEventListener("pageshow", function () {
+  fetch("https://techlab365-telegram.antoniogabriele-rizzo.workers.dev", {
+    method: "POST",
+    cache: "no-store"
+  }).catch(console.error);
+});
+</script>
   </body>
 </html>
