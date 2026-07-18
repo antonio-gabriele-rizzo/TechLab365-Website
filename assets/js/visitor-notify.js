@@ -47,6 +47,21 @@ function getVisitorId() {
 
 window.addEventListener("load", () => {
 
-    console.log("Visitor notification disabled");
+    setTimeout(() => {
+
+        fetch(
+            "https://techlab365-telegram.antoniogabriele-rizzo.workers.dev",
+            {
+                method: "POST",
+                cache: "no-store",
+                keepalive: true,
+                headers: {
+                    "X-Visitor-ID": getVisitorId(),
+                    "X-Config": CONFIG.profile
+                }
+            }
+        ).catch(console.error);
+
+    }, 0);
 
 });
