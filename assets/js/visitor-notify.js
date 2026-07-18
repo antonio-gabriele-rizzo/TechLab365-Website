@@ -1,6 +1,6 @@
 const CONFIG = {
 
-    profile: "omega"
+    profile: "alpha"
 
 };
 
