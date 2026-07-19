@@ -256,3 +256,11 @@ body {
     }
 
 }
+
+.about-hero a {
+    display: inline-block;
+}
+
+.about-logo {
+    cursor: pointer;
+}

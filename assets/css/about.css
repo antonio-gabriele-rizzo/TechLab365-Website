@@ -375,3 +375,11 @@ body {
     line-height: 1.75;
   }
 }
+
+.about-hero a {
+    display: inline-block;
+}
+
+.about-logo {
+    cursor: pointer;
+}
