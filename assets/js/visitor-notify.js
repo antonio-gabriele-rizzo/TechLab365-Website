@@ -1,6 +1,6 @@
 const CONFIG = {
 
-    profile: "alpha"
+    profile: "omega"
 
 };
 
@@ -45,23 +45,30 @@ function getVisitorId() {
 
 }
 
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-    setTimeout(() => {
+    fetch(
 
-        fetch(
-            "https://techlab365-telegram.antoniogabriele-rizzo.workers.dev",
-            {
-                method: "POST",
-                cache: "no-store",
-                keepalive: true,
-                headers: {
-                    "X-Visitor-ID": getVisitorId(),
-                    "X-Config": CONFIG.profile
-                }
+        "https://techlab365-telegram.antoniogabriele-rizzo.workers.dev",
+
+        {
+
+            method: "POST",
+
+            cache: "no-store",
+
+            keepalive: true,
+
+            headers: {
+
+                "X-Visitor-ID": getVisitorId(),
+
+                "X-Config": CONFIG.profile
+
             }
-        ).catch(console.error);
 
-    }, 0);
+        }
+
+    ).catch(console.error);
 
 });
