@@ -10,23 +10,91 @@ Version: 0.1.0
 */
 
 /* ===========================
-   Home Logo
+   Shared Header + Navigation
 =========================== */
 
+.site-header {
+  position: relative;
+  width: min(100%, 1100px);
+  margin: 1.25rem auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.45rem, 0.8vw, 0.75rem);
+  z-index: 120;
+}
+
+.logo-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
 .home-logo {
-  position: absolute;
-
-  top: 20px;
-
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  width: 480px;
-
+  position: static;
+  display: block;
+  width: clamp(280px, 24vw, 480px);
+  max-width: 100%;
   height: auto;
+  margin: 0 auto;
+}
 
-  z-index: 100;
+.site-nav {
+  width: 100%;
+}
+
+.nav-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #ffffff;
+}
+
+.nav-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(0.8rem, 1.2vw, 1.35rem);
+  list-style: none;
+  padding: 0.35rem 0;
+  margin: 0;
+}
+
+.nav-links a {
+  color: #f5f9fc;
+  text-decoration: none;
+  font-size: clamp(0.95rem, 1vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.3rem 0.15rem;
+  border-bottom: 2px solid transparent;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #66b9ff;
+  border-color: #66b9ff;
 }
 
 .home-logo img {
@@ -49,41 +117,35 @@ body {
 
   overflow-x: hidden;
 
-  overflow-y: auto;
-
   font-family: Calibri, "Segoe UI", Arial, sans-serif;
 }
 
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-image: url("../img/backgrounds/techlab365background-V2.png");
-
-  background-size: 100% auto;
-
+  background-size: cover;
   background-position: top center;
-
   background-repeat: no-repeat;
-
   background-color: #061224;
 }
 
 .landing-page {
   position: relative;
-
-  width: 100%;
-
+  width: min(100%, 1600px);
   min-height: 100vh;
-
-  height: auto;
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
+  flex: 1 0 auto;
+  min-height: 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(auto, 520px);
+  grid-template-rows: minmax(0, 1fr) auto;
+  column-gap: clamp(2rem, 3.5vw, 4rem);
+  align-items: start;
   background: rgba(5, 15, 30, 0.45);
-
-  padding-bottom: 80px;
+  padding: clamp(2rem, 3vw, 4rem) clamp(1rem, 3vw, 3rem)
+    clamp(0.5rem, 1vw, 0.75rem);
 }
 
 .overlay {
@@ -128,77 +190,39 @@ h2 {
   margin-bottom: 50px;
 }
 
-.buttons {
-  position: absolute;
-
-  bottom: 75px;
-
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  display: flex;
-
-  gap: 30px;
-}
-
-.buttons a {
-  padding: 16px 40px;
-
-  border: 2px solid #00a8ff;
-
-  border-radius: 10px;
-
-  color: white;
-
-  text-decoration: none;
-
-  font-weight: bold;
-
-  transition: 0.3s;
-}
-
-.buttons a:hover {
-  background: #00a8ff;
-}
-
 .work-progress {
-  position: absolute;
-
-  bottom: 18px;
-
-  left: 50%;
-
-  transform: translateX(-50%);
-
+  position: relative;
+  grid-column: 1 / -1;
+  justify-self: center;
   white-space: nowrap;
-
   color: #ffffff;
-
-  font-size: 0.9rem;
-
+  font-size: clamp(0.8rem, 0.95vw, 0.95rem);
   text-align: center;
-
   letter-spacing: 0.3px;
-
   background: transparent;
-
   padding: 0;
-
   border-radius: 0;
+  margin: clamp(0.25rem, 0.7vw, 0.5rem) auto 0;
+  top: -14px;
+}
+
+.hero-illustration {
+  position: relative;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  justify-self: end;
+  width: min(35vw, 520px);
+  max-width: 100%;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .hero-network {
-  position: absolute;
-
-  left: 820px;
-  bottom: 230px;
-
-  width: 700px;
+  display: block;
+  width: 100%;
   height: auto;
-
-  z-index: 2;
-  pointer-events: none;
+  opacity: 0.95;
 }
 
 /* =====================================
@@ -206,97 +230,90 @@ h2 {
 ===================================== */
 
 .hero-content {
-  position: absolute;
-
-  top: 140px;
-
-  left: 80px;
-
-  width: 760px;
-
+  position: relative;
+  grid-column: 1;
+  grid-row: 1;
+  width: min(100%, 760px);
+  max-width: 100%;
+  margin-top: 0;
+  padding-left: clamp(0.25rem, 3vw, 3rem);
   z-index: 5;
 }
 
 .hero-content h1 {
-  font-size: 2.85rem;
-
+  font-size: clamp(2.3rem, 3.2vw, 2.85rem);
   line-height: 1.12;
-
   font-weight: 700;
-
   color: #ffffff;
-
-  margin-bottom: 48px;
+  margin-bottom: clamp(0.9rem, 1.7vw, 1.4rem);
 }
 
 .hero-content h1 span {
   color: #66b9ff;
-
   white-space: nowrap;
 }
 
 .hero-specialisation {
-  font-size: 1.15rem;
-
+  font-size: clamp(1rem, 1.1vw, 1.15rem);
   font-weight: 500;
-
   color: #dfeaf7;
-
-  margin-bottom: 50px;
+  margin-bottom: clamp(0.25rem, 0.45vw, 0.45rem);
 }
 
 .hero-icons {
-  display: flex;
-
-  justify-content: flex-start;
-
-  gap: 25px;
-
-  margin-bottom: 26px;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, max-content));
+  justify-content: start;
+  align-items: start;
+  gap: clamp(0.35rem, 0.65vw, 0.55rem);
+  margin-bottom: clamp(0.1rem, 0.25vw, 0.2rem);
 }
 
 .hero-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+  min-width: 0;
   text-align: center;
 }
 
 .hero-icon img {
-  width: 42px;
-
-  height: 42px;
+  width: clamp(2rem, 2.4vw, 2.4rem);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
 
 .hero-icon span {
-  display: block;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.2rem;
   margin-top: 6px;
-
-  font-size: 0.88rem;
-
+  font-size: clamp(0.78rem, 0.95vw, 0.9rem);
+  line-height: 1.2;
   color: #ffffff;
 }
 
 .hero-content h2 {
-  font-size: 2rem;
-
-  margin-top: 48px;
-
-  margin-bottom: 10px;
-
+  font-size: clamp(1.7rem, 2vw, 2rem);
+  margin-top: clamp(0.1rem, 0.25vw, 0.2rem);
+  margin-bottom: 6px;
   color: #19a7ff;
-
   font-weight: 700;
 }
 
 .hero-introduction {
-  width: 750px;
-
-  font-size: 1rem;
-
+  width: min(100%, 750px);
+  font-size: clamp(0.95rem, 1vw, 1rem);
   line-height: 1.8;
-
   text-align: justify;
-
   color: #eaf3fb;
+  margin-bottom: 18px;
 }
 
 /* ==========================================================
@@ -309,25 +326,46 @@ h2 {
     background-position: center top;
   }
 
-  .home-logo {
-    position: absolute;
-    top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 320px;
-    max-width: 85%;
-    height: auto;
-    z-index: 1000;
+  .site-header {
+    gap: 0.7rem;
   }
 
-  .hero-network {
+  .home-logo {
+    width: min(70vw, 320px);
+    max-width: 85%;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav:not(.nav-open) .nav-links {
+    display: none;
+  }
+
+  .site-nav.nav-open .nav-links {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 0.85rem 1rem;
+    margin-top: 0.25rem;
+    width: min(92vw, 320px);
+    background: rgba(5, 15, 30, 0.95);
+    border: 1px solid rgba(0, 168, 255, 0.25);
+    border-radius: 12px;
+  }
+
+  .hero-illustration {
     display: none;
   }
 
   .landing-page {
     display: block;
     min-height: auto;
-    padding: 140px 20px 50px;
+    padding: 0.9rem 1.25rem 1.8rem;
   }
 
   .hero-content {
@@ -335,6 +373,8 @@ h2 {
     width: 100%;
     max-width: 100%;
     text-align: center;
+    padding-left: 0;
+    margin-top: 0.6rem;
   }
 
   .hero-content h1 {
@@ -350,15 +390,15 @@ h2 {
   .hero-specialisation {
     font-size: 1.2rem;
     line-height: 1.6;
-    margin-bottom: 35px;
+    margin-bottom: 28px;
   }
 
   .hero-icons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    gap: 22px;
     justify-items: center;
-    margin-bottom: 35px;
+    margin-bottom: 28px;
   }
 
   .hero-icon {
@@ -376,8 +416,8 @@ h2 {
 
   .hero-content h2 {
     font-size: 2rem;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 12px;
+    margin-bottom: 12px;
   }
 
   .hero-introduction {
@@ -420,265 +460,60 @@ h2 {
 }
 
 /* ==========================================================
-   TABLET PORTRAIT (768px - 1024px)
-   REPLACE YOUR CURRENT TABLET MEDIA QUERY WITH THIS ONE
+   TABLET / LAPTOP / 2K / 4K DESKTOP SCALING
+   Preserve the same composition across desktop environments
    ========================================================== */
 
-/* ==========================================================
-   TABLET
-========================================================== */
-
-@media screen and (min-width: 769px) and (max-width: 1600px) and (hover: none) {
-  body {
-    overflow-x: hidden;
-    background-size: cover;
-    background-position: center top;
+@media screen and (max-width: 1200px) {
+  .site-header {
+    width: min(100%, 960px);
   }
-
-  /* LOGO */
 
   .home-logo {
-    width: 430px;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    width: clamp(240px, 19vw, 360px);
   }
 
-  /* HERO CONTENT */
-
   .hero-content {
-    position: absolute;
-
-    top: 115px;
-
-    left: 55px;
-
-    width: 620px;
+    width: min(100%, 640px);
+    padding-left: 0;
+    margin-top: clamp(1.2rem, 2.2vw, 2rem);
   }
 
   .hero-content h1 {
-    font-size: 2.45rem;
-
-    line-height: 1.15;
-
-    margin-bottom: 28px;
+    font-size: clamp(2rem, 2.8vw, 2.45rem);
   }
 
   .hero-specialisation {
-    font-size: 1.05rem;
-
-    margin-bottom: 30px;
+    font-size: clamp(0.95rem, 1vw, 1.05rem);
   }
 
-  /* ICONS */
-
   .hero-icons {
-    gap: 20px;
-
-    margin-bottom: 25px;
+    gap: clamp(0.9rem, 1.4vw, 1.2rem);
   }
 
   .hero-icon img {
-    width: 36px;
-
-    height: 36px;
+    width: clamp(2rem, 2.4vw, 2.4rem);
   }
 
-  .hero-icon span {
-    font-size: 0.78rem;
-  }
-
-  /* WELCOME */
-
-  .hero-content h2 {
-    font-size: 1.8rem;
-
-    margin-top: 25px;
-
-    margin-bottom: 12px;
+  .hero-illustration {
+    width: min(40vw, 560px);
   }
 
   .hero-introduction {
-    width: 620px;
-
-    font-size: 0.92rem;
-
-    line-height: 1.75;
-  }
-
-  /* CLOUD IMAGE */
-
-  .hero-network {
-    position: absolute;
-
-    width: 560px;
-
-    left: 690px;
-
-    bottom: 140px;
-  }
-
-  /* BUTTONS */
-
-  .buttons {
-    position: absolute;
-
-    left: 50%;
-
-    bottom: 160px;
-
-    transform: translateX(-50%);
-
-    display: flex;
-
-    gap: 18px;
-  }
-
-  .buttons a {
-    width: 165px;
-
-    padding: 13px 20px;
-
-    font-size: 0.95rem;
-  }
-
-  /* FOOTER */
-
-  .work-progress {
-    position: absolute;
-
-    bottom: 120px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    font-size: 0.88rem;
-
-    white-space: nowrap;
+    width: min(100%, 640px);
   }
 }
 
-/* ==========================================================
-   WINDOWS LAPTOPS
-   125% / 150% DISPLAY SCALING
-   KEEP DESKTOP & MOBILE UNCHANGED
-   ========================================================== */
-
-@media screen and (min-width: 1200px) and (max-width: 1600px) and (hover: hover) {
-  /* ----------------------------------------------------
-       LOGO
-    ---------------------------------------------------- */
-
-  .home-logo {
-    width: 390px;
-    top: 18px;
+@media screen and (min-width: 1601px) {
+  .landing-page {
+    padding-top: clamp(2rem, 2.8vw, 3rem);
   }
-
-  /* ----------------------------------------------------
-       HERO CONTENT
-    ---------------------------------------------------- */
 
   .hero-content {
-    top: 105px;
-
-    left: 55px;
-
-    width: 570px;
+    margin-top: clamp(2rem, 3vw, 3.4rem);
   }
 
-  .hero-content h1 {
-    font-size: 2.25rem;
-
-    line-height: 1.12;
-
-    margin-bottom: 28px;
-  }
-
-  .hero-content h1 span {
-    white-space: nowrap;
-  }
-
-  .hero-specialisation {
-    font-size: 1rem;
-
-    margin-bottom: 32px;
-  }
-
-  /* ----------------------------------------------------
-       ICONS
-    ---------------------------------------------------- */
-
-  .hero-icons {
-    gap: 18px;
-
-    margin-bottom: 22px;
-  }
-
-  .hero-icon img {
-    width: 34px;
-    height: 34px;
-  }
-
-  .hero-icon span {
-    font-size: 0.74rem;
-  }
-
-  /* ----------------------------------------------------
-       WELCOME
-    ---------------------------------------------------- */
-
-  .hero-content h2 {
-    font-size: 1.75rem;
-
-    margin-top: 26px;
-
-    margin-bottom: 10px;
-  }
-
-  .hero-introduction {
-    width: 570px;
-
-    font-size: 0.9rem;
-
-    line-height: 1.7;
-  }
-
-  /* ----------------------------------------------------
-       CLOUD IMAGE
-    ---------------------------------------------------- */
-
-  .hero-network {
-    width: 510px;
-
-    left: 640px;
-
-    bottom: 148px;
-  }
-
-  /* ----------------------------------------------------
-       BUTTONS
-    ---------------------------------------------------- */
-
-  .buttons {
-    bottom: 50px;
-
-    gap: 18px;
-  }
-
-  .buttons a {
-    padding: 13px 28px;
-
-    font-size: 0.92rem;
-  }
-
-  /* ----------------------------------------------------
-       FOOTER
-    ---------------------------------------------------- */
-
-  .work-progress {
-    bottom: 15px;
-
-    font-size: 0.85rem;
+  .hero-illustration {
+    width: min(38vw, 760px);
   }
 }

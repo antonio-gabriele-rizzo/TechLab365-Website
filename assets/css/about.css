@@ -176,17 +176,82 @@ body {
   }
 }
 
-/* ---------- About Logo ---------- */
+/* ---------- Shared Header ---------- */
+
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.site-nav {
+  width: 100%;
+}
+
+.nav-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+}
+
+.nav-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #ffffff;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.2rem;
+  list-style: none;
+  padding: 0.35rem 0;
+  margin: 0;
+}
+
+.nav-links a {
+  color: #f5f9fc;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.3rem 0.15rem;
+  border-bottom: 2px solid transparent;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #66b9ff;
+  border-color: #66b9ff;
+}
 
 .about-logo {
-  position: absolute;
-
-  top: 35px;
-
-  left: 40px;
-
-  width: 300px;
-
+  position: static;
+  display: block;
+  width: clamp(220px, 28vw, 320px);
+  max-width: 100%;
+  margin: 0 auto 0.2rem;
   z-index: 10;
 }
 
@@ -236,10 +301,34 @@ body {
     padding: 28px 20px 20px;
   }
 
+  .site-header {
+    margin-bottom: 0.8rem;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav:not(.nav-open) .nav-links {
+    display: none;
+  }
+
+  .site-nav.nav-open .nav-links {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 0.85rem 1rem;
+    width: min(92vw, 320px);
+    background: rgba(5, 15, 30, 0.95);
+    border: 1px solid rgba(0, 168, 255, 0.25);
+    border-radius: 12px;
+  }
+
   .about-logo {
-    position: static;
-    display: block;
-    width: 310px;
+    width: min(72vw, 310px);
     max-width: 88%;
     margin: 8px auto 18px;
   }
@@ -377,9 +466,9 @@ body {
 }
 
 .about-hero a {
-    display: inline-block;
+  display: inline-block;
 }
 
 .about-logo {
-    cursor: pointer;
+  cursor: pointer;
 }

@@ -1,0 +1,54 @@
+Folder PATH listing
+Volume serial number is 00000054 DA1F:EF91
+C:.
+|   about.html
+|   CNAME
+|   contact.html
+|   index.html
+|   LICENSE
+|   portfolio.html
+|   projects.html
+|   README.md
+|   tree.txt
+|   
++---assets
+|   |   img.lnk
+|   |   
+|   +---css
+|   |       about.css
+|   |       contact.css
+|   |       projects.css
+|   |       style - 20.07.2026.css
+|   |       style - 21.07.2026.css
+|   |       style.css
+|   |       
+|   +---fonts
+|   +---img
+|   |   +---backgrounds
+|   |   |       about-background.png
+|   |   |       techlab365background-V2.png
+|   |   |       
+|   |   +---graphics
+|   |   |       cloud-network.png
+|   |   |       
+|   |   +---icons
+|   |   |       automation-icon.png
+|   |   |       cloud-icon.png
+|   |   |       cybersecurity-icon.png
+|   |   |       development-icon.png
+|   |   |       it-support-icon.png
+|   |   |       networking-icon.png
+|   |   |       
+|   |   +---logo
+|   |   |       logo.png
+|   |   |       TechLab365-Dark.png
+|   |   |       TechLab365-Light - Copy.png
+|   |   |       TechLab365-Light.png
+|   |   |       
+|   |   \---profile
+|   |           antonio-gabriele-rizzo.png
+|   |           
+|   \---js
+|           visitor-notify.js
+|           
+\---screenshots

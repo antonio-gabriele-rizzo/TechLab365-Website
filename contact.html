@@ -1,115 +1,115 @@
 <!doctype html>
 <html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Contact | TechLab365</title>
 
-    <meta name="description"
-          content="Contact TechLab365">
+    <meta name="description" content="Contact TechLab365" />
 
-    <link rel="stylesheet"
-          href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/contact.css" />
+  </head>
 
-</head>
+  <body>
+    <header class="contact-hero">
+      <div class="site-header">
+        <a href="index.html" class="logo-link">
+          <img
+            src="assets/img/logo/TechLab365-Light.png"
+            alt="TechLab365 Logo"
+            class="projects-logo"
+          />
+        </a>
 
-<body>
+        <nav class="site-nav" aria-label="Primary">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
 
-<header class="contact-hero">
+      <h1>Contact</h1>
 
-   <a href="index.html">
-    <img
-        src="assets/img/logo/TechLab365-Light.png"
-        alt="TechLab365 Logo"
-        class="projects-logo">
-</a>
-
-    <h1>Contact</h1>
-
-    <p class="hero-tagline">
-
+      <p class="hero-tagline">
         Microsoft 365 • Cloud Technologies • IT Support
+      </p>
+    </header>
 
-    </p>
-
-</header>
-
-<main class="contact-container">
-
-    <section class="card">
-
+    <main class="contact-container">
+      <section class="card">
         <h2>Get in Touch</h2>
 
+        <p>Thank you for visiting TechLab365.</p>
+
         <p>
-
-            Thank you for visiting TechLab365.
-
+          Whether you would like to discuss an IT opportunity, ask a question
+          about one of my Microsoft 365 projects, or simply get in touch, I'd be
+          pleased to hear from you.
         </p>
 
         <p>
-
-            Whether you would like to discuss an IT opportunity,
-            ask a question about one of my Microsoft 365 projects,
-            or simply get in touch, I'd be pleased to hear from you.
-
+          If you require a copy of my current Curriculum Vitae, please send me
+          an email and I will be happy to provide the latest version.
         </p>
+      </section>
 
-        <p>
-
-            If you require a copy of my current Curriculum Vitae,
-            please send me an email and I will be happy to provide
-            the latest version.
-
-        </p>
-
-    </section>
-
-    <section class="card">
-
+      <section class="card">
         <h2>Contact Details</h2>
 
         <div class="contact-buttons">
+          <a href="mailto:contact@techlab365.co.uk"> Email </a>
 
-            <a href="mailto:contact@techlab365.co.uk">
+          <a
+            href="https://www.linkedin.com/in/antonio-gabriele-rizzo/"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
 
-                Email
-
-            </a>
-
-            <a href="https://www.linkedin.com/in/antonio-gabriele-rizzo/"
-               target="_blank">
-
-                LinkedIn
-
-            </a>
-
-            <a href="https://github.com/antonio-gabriele-rizzo"
-               target="_blank">
-
-                GitHub
-
-            </a>
-
+          <a href="https://github.com/antonio-gabriele-rizzo" target="_blank">
+            GitHub
+          </a>
         </div>
+      </section>
 
-    </section>
+      <div class="buttons">
+        <a href="index.html"> Home </a>
+      </div>
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".site-nav").forEach(function (nav) {
+          const toggle = nav.querySelector(".nav-toggle");
+          if (!toggle) return;
 
-    <div class="buttons">
+          toggle.addEventListener("click", function () {
+            const expanded = nav.classList.toggle("nav-open");
+            toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+          });
 
-        <a href="index.html">
-
-            Home
-
-        </a>
-
-    </div>
-
-</main>
-
-</body>
-
+          nav.querySelectorAll(".nav-links a").forEach(function (link) {
+            link.addEventListener("click", function () {
+              nav.classList.remove("nav-open");
+              toggle.setAttribute("aria-expanded", "false");
+            });
+          });
+        });
+      });
+    </script>
+  </body>
 </html>
