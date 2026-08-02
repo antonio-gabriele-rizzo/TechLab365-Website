@@ -20,26 +20,18 @@ body {
 
 .about-hero {
   position: relative;
-
-  margin-top: -20px;
-
-  padding: 15px 50px 15px;
-
+  margin-top: 0.9rem;
+  padding: 0.8rem 1.25rem 1.2rem;
   text-align: center;
-
   background: linear-gradient(rgba(5, 15, 30, 0.88), rgba(5, 15, 30, 0.88));
-
   border-bottom: 2px solid #00a8ff;
 }
 
 .about-hero h1 {
-  font-size: 3.2rem;
-
-  text-align: center;
-
+  font-size: clamp(2.2rem, 3.4vw, 2.9rem);
   color: #f2f2f2;
-
-  margin: 18px 0 10px;
+  margin: 1.2rem 0 0.35rem;
+  line-height: 1.15;
 }
 
 .about-hero h2 {
@@ -51,18 +43,13 @@ body {
 
 .hero-tagline {
   max-width: 1100px;
-
   margin: 0 auto;
-
   white-space: nowrap;
-
   text-align: center;
-
   color: #1ea7ff;
-
-  font-size: 1.35rem;
-
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
   font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .location {
@@ -71,15 +58,15 @@ body {
 
 .about-container {
   width: min(1100px, 92%);
-  margin: 35px auto;
+  margin: 20px auto;
 }
 
 .card {
   background: #102235;
   border: 1px solid rgba(0, 168, 255, 0.25);
   border-radius: 16px;
-  padding: 30px;
-  margin-bottom: 35px;
+  padding: 24px;
+  margin-bottom: 16px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
@@ -99,13 +86,9 @@ body {
 
 .card h3 {
   color: #1ea7ff;
-
   font-size: 1.6rem;
-
-  margin-top: 40px;
-
-  margin-bottom: 18px;
-
+  margin-top: 28px;
+  margin-bottom: 14px;
   font-weight: 700;
 }
 
@@ -179,16 +162,23 @@ body {
 /* ---------- Shared Header ---------- */
 
 .site-header {
+  position: relative;
+  width: min(100%, 1100px);
+  margin: -0.4rem auto 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.8rem;
-  width: 100%;
-  margin-bottom: 1rem;
+  gap: 0.05rem;
+  z-index: 120;
 }
 
 .site-nav {
   width: 100%;
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+  left: 8px;
 }
 
 .nav-toggle {
@@ -221,10 +211,10 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.9rem 1.2rem;
+  gap: clamp(0.8rem, 1.2vw, 1.35rem);
   list-style: none;
-  padding: 0.35rem 0;
-  margin: 0;
+  padding: 0;
+  margin: -3px 0 0;
 }
 
 .nav-links a {
@@ -247,28 +237,27 @@ body {
 }
 
 .about-logo {
-  position: static;
+  position: relative;
+  left: 7px; /* move logo 5px to the right */
   display: block;
-  width: clamp(220px, 28vw, 320px);
+  width: clamp(235px, 29vw, 340px);
   max-width: 100%;
-  margin: 0 auto 0.2rem;
-  z-index: 10;
+  height: auto;
+  margin: 0 auto;
+  cursor: pointer;
 }
 
 /* ---------- Welcome Section ---------- */
 
 .welcome-container {
   display: flex;
-
   align-items: flex-start;
-
-  gap: 35px;
-
-  margin-top: 12px;
+  gap: 18px;
+  margin-top: 4px;
 }
 
 .profile-photo {
-  width: 180px;
+  width: 165px;
 
   border-radius: 18px;
 
@@ -284,7 +273,10 @@ body {
 }
 
 .welcome-text p {
-  padding-top: 0px;
+.welcome-text p {
+  padding-top: 0;
+  margin: 0 0 10px;
+  line-height: 1.55;
   text-align: justify;
 }
 
