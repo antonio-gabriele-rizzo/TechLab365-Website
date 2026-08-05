@@ -3,17 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>About Me | TechLab365</title>
+
+    <meta
+      name="description"
+      content="Learn more about the founder of TechLab365, the professional journey, background, skills and motivations behind the project."
+    />
+
     <link rel="stylesheet" href="assets/css/about.css" />
   </head>
+
   <body>
-    <header class="about-hero">
+    <header class="page-hero">
       <div class="site-header">
         <a href="index.html" class="logo-link">
           <img
             src="assets/img/logo/TechLab365-Light.png"
             alt="TechLab365 Logo"
-            class="about-logo"
+            class="site-logo"
           />
         </a>
 
@@ -28,6 +36,7 @@
             <span></span>
             <span></span>
           </button>
+
           <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html" class="active">About Me</a></li>
@@ -37,15 +46,19 @@
         </nav>
       </div>
 
-      <h1>About the Founder</h1> 
-            
+      <h1>About the Founder</h1>
+
       <p class="hero-tagline">
         The story behind TechLab365 and the journey that transformed a lifelong
         passion for technology into a professional IT career.
       </p>
     </header>
 
-    <main class="about-container">
+    <main class="page-container">
+
+      <!-- ==========================================================
+           CARD 1 — WELCOME
+      ========================================================== -->
       <section class="card">
         <h2>Welcome</h2>
 
@@ -75,6 +88,9 @@
         </div>
       </section>
 
+      <!-- ==========================================================
+           CARD 2 — MY JOURNEY
+      ========================================================== -->
       <section class="card">
         <h2>My Journey</h2>
 
@@ -129,7 +145,7 @@
           healthcare.
         </p>
 
-        <h3>A Career in Healthcare</h3>
+          <h3>A Career in Healthcare</h3>
 
         <p>
           By the time I began studying Physiotherapy, my career path had already
@@ -169,11 +185,11 @@
         </p>
 
         <p>
-          <strong
-            >Every conversation with the IT team strengthened a feeling that had
+          <strong>
+            Every conversation with the IT team strengthened a feeling that had
             been growing inside me for years: I had chosen a rewarding
-            profession, but not the one that truly reflected who I was.</strong
-          >
+            profession, but not the one that truly reflected who I was.
+          </strong>
         </p>
 
         <p>
@@ -183,14 +199,17 @@
         </p>
 
         <p>
-          <strong
-            >The more I interacted with IT professionals, the more I realised
+          <strong>
+            The more I interacted with IT professionals, the more I realised
             that I didn't just want my technical problems to be solved. I wanted
-            to be the person solving them.</strong
-          >
+            to be the person solving them.
+          </strong>
         </p>
       </section>
 
+      <!-- ==========================================================
+           CARD 3 — WHY TECHLAB365
+      ========================================================== -->
       <section class="card">
         <h2>Why TechLab365?</h2>
 
@@ -215,6 +234,9 @@
         </p>
       </section>
 
+      <!-- ==========================================================
+           CARD 4 — TECHNICAL SKILLS
+      ========================================================== -->
       <section class="card">
         <h2>Technical Skills &amp; Technologies</h2>
 
@@ -236,6 +258,9 @@
         </ul>
       </section>
 
+      <!-- ==========================================================
+           CARD 5 — CAREER OBJECTIVE
+      ========================================================== -->
       <section class="card">
         <h2>Career Objective</h2>
 
@@ -249,29 +274,52 @@
         </p>
       </section>
 
-      <div class="buttons">
+      <!-- ==========================================================
+           PAGE BUTTONS
+      ========================================================== -->
+      <div class="page-buttons">
         <a href="index.html">Home</a>
       </div>
+
     </main>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+
         document.querySelectorAll(".site-nav").forEach(function (nav) {
+
           const toggle = nav.querySelector(".nav-toggle");
+
           if (!toggle) return;
 
           toggle.addEventListener("click", function () {
+
             const expanded = nav.classList.toggle("nav-open");
-            toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+
+            toggle.setAttribute(
+              "aria-expanded",
+              expanded ? "true" : "false"
+            );
+
           });
 
           nav.querySelectorAll(".nav-links a").forEach(function (link) {
+
             link.addEventListener("click", function () {
+
               nav.classList.remove("nav-open");
+
               toggle.setAttribute("aria-expanded", "false");
+
             });
+
           });
+
         });
+
       });
     </script>
+
   </body>
 </html>
+      

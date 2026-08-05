@@ -1,5 +1,5 @@
 /* ==========================================================
-   TechLab365 - Contact Page
+   TechLab365 - Portfolio Styles
    ========================================================== */
 
 * {
@@ -30,9 +30,7 @@ body {
   background-color: #081523;
 }
 
-/* ==========================================================
-   HEADER
-   ========================================================== */
+/* ---------- Shared Header ---------- */
 
 .site-header {
   position: relative;
@@ -42,6 +40,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 0.05rem;
+  z-index: 120;
 }
 
 .logo-link {
@@ -59,12 +58,11 @@ body {
   cursor: pointer;
 }
 
-/* ==========================================================
-   NAVIGATION
-   ========================================================== */
-
 .site-nav {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
 
 .nav-toggle {
@@ -122,9 +120,7 @@ body {
   border-color: #66b9ff;
 }
 
-/* ==========================================================
-   HERO
-   ========================================================== */
+/* ---------- Hero ---------- */
 
 .page-hero {
   position: relative;
@@ -133,7 +129,6 @@ body {
   text-align: center;
   background: linear-gradient(rgba(5, 15, 30, 0.88), rgba(5, 15, 30, 0.88));
   border-bottom: 2px solid #00a8ff;
-  width: 100%;
 }
 
 .page-hero h1 {
@@ -154,14 +149,14 @@ body {
   letter-spacing: 0.02em;
 }
 
+/* ---------- Main Container ---------- */
+
 .page-container {
   width: min(1100px, 92%);
   margin: 1.1rem auto 1.5rem;
 }
 
-/* ==========================================================
-   CARDS
-   ========================================================== */
+/* ---------- Cards ---------- */
 
 .card {
   background: #102235;
@@ -180,117 +175,64 @@ body {
   padding-bottom: 0.45rem;
 }
 
-.card h3 {
-  color: #1ea7ff;
-  font-size: 1.35rem;
-  margin: 1.4rem 0 0.7rem;
-  font-weight: 700;
-}
-
 .card p {
   text-align: justify;
   margin-bottom: 0.7rem;
   line-height: 1.6;
 }
 
-.card ul {
-  margin: 0.8rem 0;
-  padding-left: 1.4rem;
-}
+/* ---------- Portfolio Buttons ---------- */
 
-.card li {
-  margin-bottom: 0.45rem;
-}
-
-/* ==========================================================
-   ACTION BUTTONS
-   ========================================================== */
-
-.page-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: clamp(0.75rem, 1.6vw, 1.25rem);
-  margin: 1.15rem 0 0;
-}
-
-.page-buttons a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 110px;
-  padding: 0.85rem 1rem;
-  border: 2px solid #00a8ff;
-  border-radius: 999px;
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 700;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
-}
-
-.page-buttons a:hover,
-.page-buttons a:focus-visible,
-.page-buttons a.active {
-  background: #00a8ff;
-}
-
-/* ==========================================================
-   PAGE NAVIGATION
-   ========================================================== */
-
-.page-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: clamp(0.75rem, 1.6vw, 1.25rem);
-  margin: 1.15rem 0 0;
-}
-
-.page-buttons a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 110px;
-  padding: 0.85rem 1rem;
-  border: 2px solid #00a8ff;
-  border-radius: 999px;
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 700;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
-}
-
-.page-buttons a:hover,
-.page-buttons a:focus-visible,
-.page-buttons a.active {
-  background: #00a8ff;
-}
-
-/* ==========================================================
-   CONTACT BUTTONS
-   ========================================================== */
-
-.contact-buttons {
-  display: flex;
-  justify-content: center;
+.portfolio-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
+  margin-top: 1.25rem;
 }
 
-.contact-buttons a {
+.portfolio-buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 64px;
+  padding: 1rem;
+  border: 2px solid #00a8ff;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.portfolio-buttons a:hover,
+.portfolio-buttons a:focus-visible {
+  background: #00a8ff;
+  transform: translateY(-2px);
+}
+
+/* ---------- Bottom Navigation ---------- */
+
+.page-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(0.75rem, 1.6vw, 1.25rem);
+  margin: 1.15rem 0 0;
+}
+
+.page-buttons a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.9rem 1.4rem;
+  min-width: 110px;
+  padding: 0.85rem 1rem;
   border: 2px solid #00a8ff;
-  border-radius: 10px;
+  border-radius: 999px;
   text-decoration: none;
   color: #ffffff;
   font-weight: 700;
@@ -299,14 +241,13 @@ body {
     color 0.3s ease;
 }
 
-.contact-buttons a:hover,
-.contact-buttons a:focus-visible {
+.page-buttons a:hover,
+.page-buttons a:focus-visible,
+.page-buttons a.active {
   background: #00a8ff;
 }
 
-/* ==========================================================
-   MOBILE
-   ========================================================== */
+/* ---------- Mobile ---------- */
 
 @media (max-width: 768px) {
   .nav-toggle {
@@ -321,6 +262,10 @@ body {
     display: flex;
   }
 
+  .site-nav {
+    left: 0;
+  }
+
   .nav-links {
     flex-direction: column;
     gap: 0.8rem;
@@ -332,11 +277,16 @@ body {
     margin: 0 auto 0.4rem;
   }
 
-  .page-hero {
+  .portfolio-logo {
+    width: min(72vw, 310px);
+    max-width: 88%;
+  }
+
+  .portfolio-hero {
     padding: 0.75rem 1rem 1rem;
   }
 
-  .page-hero h1 {
+  .portfolio-hero h1 {
     font-size: 2.15rem;
   }
 
@@ -346,7 +296,7 @@ body {
     padding: 0 0.5rem;
   }
 
-  .page-container {
+  .portfolio-container {
     width: 94%;
     margin: 1rem auto;
   }
@@ -357,10 +307,27 @@ body {
 
   .card h2 {
     font-size: 1.65rem;
+    margin: 0 0 0.5rem;
+    padding-bottom: 0.4rem;
   }
 
-  .card h3 {
-    font-size: 1.25rem;
+  .card p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    text-align: justify;
+  }
+
+  .portfolio-buttons {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    margin-top: 1rem;
+  }
+
+  .portfolio-buttons a {
+    width: 100%;
+    min-height: 56px;
+    padding: 0.9rem;
+    font-size: 1rem;
   }
 
   .page-buttons {

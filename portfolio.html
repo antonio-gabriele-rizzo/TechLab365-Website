@@ -1,105 +1,200 @@
 <!doctype html>
 <html lang="en-GB">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | TechLab365</title>
 
-    <title>Projects | TechLab365</title>
+  <meta
+    name="description"
+    content="Professional Microsoft 365, Intune, Entra ID and Active Directory portfolio."
+  />
 
-    <meta
-      name="description"
-      content="Microsoft 365 projects and technical documentation."
-    />
+  <link rel="stylesheet" href="assets/css/portfolio.css" />
+</head>
 
-    <link rel="stylesheet" href="assets/css/projects.css" />
-  </head>
+<body>
 
-  <body>
-    <header class="projects-hero">
-      <div class="site-header">
-        <a href="index.html" class="logo-link">
-          <img
-            src="assets/img/logo/TechLab365-Light.png"
-            alt="TechLab365 Logo"
-            class="projects-logo"
-          />
-        </a>
+<header class="page-hero">
 
-        <nav class="site-nav" aria-label="Primary">
-          <button
-            class="nav-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="portfolio.html" class="active">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
+  <div class="site-header">
 
-      <h1>Portfolio</h1>
+    <a href="index.html" class="logo-link">
+      <img
+        src="assets/img/logo/TechLab365-Light.png"
+        alt="TechLab365 Logo"
+        class="site-logo"
+      />
+    </a>
 
-      <p class="hero-tagline">
-        Microsoft 365 • Cloud Technologies • IT Support
-      </p>
-    </header>
+    <nav class="site-nav" aria-label="Primary">
 
-    <main class="projects-container">
-      <section class="content-box">
-        <p>
-          TechLab365 is gradually evolving into a central hub for my Microsoft
-          365 portfolio. During this transition, all Microsoft 365 projects
-          remain publicly available on GitHub while they are progressively
-          integrated into this website together with additional screenshots,
-          technical documentation and step-by-step guides.
-        </p>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
 
-        <p>
-          Every published project represents genuine hands-on work carried out
-          within my own Microsoft 365 tenant and demonstrates practical
-          administration, configuration, troubleshooting and real-world
-          Microsoft 365 management.
-        </p>
+        <span></span>
+        <span></span>
+        <span></span>
 
-        <div class="button-container">
-          <a href="https://github.com/antonio-gabriele-rizzo" target="_blank">
-            View GitHub Projects
-          </a>
-        </div>
-      </section>
+      </button>
 
-      <div class="button-container">
-        <a href="index.html"> Home </a>
-      </div>
-    </main>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".site-nav").forEach(function (nav) {
-          const toggle = nav.querySelector(".nav-toggle");
-          if (!toggle) return;
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
 
-          toggle.addEventListener("click", function () {
-            const expanded = nav.classList.toggle("nav-open");
-            toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
-          });
+    </nav>
 
-          nav.querySelectorAll(".nav-links a").forEach(function (link) {
-            link.addEventListener("click", function () {
-              nav.classList.remove("nav-open");
-              toggle.setAttribute("aria-expanded", "false");
-            });
-          });
-        });
+  </div>
+
+  <h1>Portfolio</h1>
+
+  <p class="hero-tagline">
+    Microsoft Administration • Cloud Technologies • Windows Infrastructure
+  </p>
+
+</header>
+
+<main class="page-container">
+
+  <section class="card">
+
+    <h2>Professional Portfolio</h2>
+
+    <p>
+
+      Welcome to my technical portfolio.
+
+      Here you will find a collection of practical Microsoft
+      administration projects completed within my own Microsoft 365
+      environment.
+
+    </p>
+
+    <p>
+
+      Each portfolio provides a concise overview of the work completed,
+      selected screenshots, the technologies used and a direct link to
+      the corresponding GitHub repository where the complete technical
+      documentation is available.
+
+    </p>
+
+    <p>
+
+      Every published portfolio reflects genuine hands-on experience in
+      Microsoft administration, configuration, troubleshooting and
+      best practices.
+
+    </p>
+
+  </section>
+
+  <section class="card">
+
+    <h2>Choose a Portfolio</h2>
+
+    <div class="portfolio-buttons">
+
+      <a href="m365-admin.html">
+        Microsoft 365 Administration
+      </a>
+
+      <a href="intune.html">
+        Microsoft Intune
+      </a>
+
+      <a href="entra-id.html">
+        Microsoft Entra ID
+      </a>
+
+      <a href="active-directory.html">
+        Active Directory
+      </a>
+
+    </div>
+
+  </section>
+
+    <section class="card">
+
+    <h2>Why GitHub?</h2>
+
+    <p>
+
+      The TechLab365 website provides a structured summary of each
+      portfolio, while GitHub contains the complete project
+      documentation, configuration steps, PowerShell scripts,
+      screenshots and implementation details.
+
+    </p>
+
+    <p>
+
+      This approach allows visitors to quickly understand each project
+      before exploring the full technical documentation available in
+      the associated GitHub repository.
+
+    </p>
+
+  </section>
+
+  <div class="page-buttons">
+
+    <a href="index.html">Home</a>
+
+    <a href="about.html">About Me</a>
+
+    <a href="portfolio.html" class="active">Portfolio</a>
+
+    <a href="contact.html">Contact</a>
+
+  </div>
+
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  document.querySelectorAll(".site-nav").forEach(function (nav) {
+
+    const toggle = nav.querySelector(".nav-toggle");
+
+    if (!toggle) return;
+
+    toggle.addEventListener("click", function () {
+
+      const expanded = nav.classList.toggle("nav-open");
+
+      toggle.setAttribute(
+        "aria-expanded",
+        expanded ? "true" : "false"
+      );
+
+    });
+
+    nav.querySelectorAll(".nav-links a").forEach(function (link) {
+
+      link.addEventListener("click", function () {
+
+        nav.classList.remove("nav-open");
+
+        toggle.setAttribute("aria-expanded", "false");
+
       });
-    </script>
-  </body>
+
+    });
+
+  });
+
+});
+</script>
+
+</body>
 </html>
