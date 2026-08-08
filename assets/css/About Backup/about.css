@@ -1,0 +1,466 @@
+/* ==========================================================
+   TechLab365 - About Me 2.0 Styles
+   ========================================================== */
+
+body {
+  margin: 0;
+  font-family: Calibri, "Segoe UI", Arial, sans-serif;
+  color: #eaf3fb;
+  line-height: 1.8;
+
+  background:
+    linear-gradient(rgba(8, 21, 35, 0.6), rgba(8, 21, 35, 0.6)),
+    url("../img/backgrounds/about-background.png");
+
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: 700px auto;
+  background-color: #081523;
+}
+
+.about-hero {
+  position: relative;
+  margin-top: 0.9rem;
+  padding: 0.8rem 1.25rem 1.2rem;
+  text-align: center;
+  background: linear-gradient(rgba(5, 15, 30, 0.88), rgba(5, 15, 30, 0.88));
+  border-bottom: 2px solid #00a8ff;
+}
+
+.about-hero h1 {
+  font-size: clamp(2.2rem, 3.4vw, 2.9rem);
+  color: #f2f2f2;
+  margin: 1.2rem 0 0.35rem;
+  line-height: 1.15;
+}
+
+.about-hero h2 {
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin: 15px 0;
+  color: #c8d8e8;
+}
+
+.hero-tagline {
+  max-width: 1100px;
+  margin: 0 auto;
+  white-space: nowrap;
+  text-align: center;
+  color: #1ea7ff;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.location {
+  color: #d5e6f6;
+}
+
+.about-container {
+  width: min(1100px, 92%);
+  margin: 20px auto;
+}
+
+.card {
+  background: #102235;
+  border: 1px solid rgba(0, 168, 255, 0.25);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.card h2 {
+  color: #00a8ff;
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-size: 2.2rem;
+  border-bottom: 2px solid rgba(0, 168, 255, 0.25);
+  padding-bottom: 10px;
+}
+
+.about-container .card:nth-of-type(1) h2 {
+  font-size: 2.7rem;
+  letter-spacing: 0.5px;
+}
+
+.card h3 {
+  color: #1ea7ff;
+  font-size: 1.6rem;
+  margin-top: 28px;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+.card p {
+  text-align: justify;
+  margin-bottom: 14px;
+}
+
+.skills {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.skills li {
+  background: #0b314d;
+  border: 1px solid #00a8ff;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 18px;
+  font-weight: 600;
+}
+
+.buttons {
+  text-align: center;
+  margin: 50px 0 70px;
+}
+
+.buttons a {
+  display: inline-block;
+  padding: 16px 42px;
+  border: 2px solid #00a8ff;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.buttons a:hover {
+  background: #00a8ff;
+}
+
+@media (max-width: 768px) {
+  .about-hero h1 {
+    margin: 60px 0 15px;
+
+    font-size: 3rem;
+
+    text-align: center;
+
+    color: #f2f2f2;
+  }
+
+  .about-hero h2 {
+    font-size: 1.1rem;
+  }
+
+  .card {
+    padding: 25px;
+  }
+
+  .profile-photo {
+    width: 170px;
+    height: 170px;
+  }
+}
+
+/* ---------- Shared Header ---------- */
+
+.site-header {
+  position: relative;
+  width: min(100%, 1100px);
+  margin: -0.4rem auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.05rem;
+  z-index: 120;
+}
+
+.site-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+  left: 8px;
+}
+
+.nav-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+}
+
+.nav-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #ffffff;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(0.8rem, 1.2vw, 1.35rem);
+  list-style: none;
+  padding: 0;
+  margin: -3px 0 0;
+}
+
+.nav-links a {
+  color: #f5f9fc;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.3rem 0.15rem;
+  border-bottom: 2px solid transparent;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #66b9ff;
+  border-color: #66b9ff;
+}
+
+.about-logo {
+  position: relative;
+  left: 7px; /* move logo 5px to the right */
+  display: block;
+  width: clamp(235px, 29vw, 340px);
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+/* ---------- Welcome Section ---------- */
+
+.welcome-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-top: 4px;
+}
+
+.profile-photo {
+  width: 165px;
+
+  border-radius: 18px;
+
+  border: 3px solid #1ea7ff;
+
+  flex-shrink: 0;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.welcome-text {
+  flex: 1;
+}
+
+.welcome-text p {
+.welcome-text p {
+  padding-top: 0;
+  margin: 0 0 10px;
+  line-height: 1.55;
+  text-align: justify;
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .about-hero {
+    padding: 28px 20px 20px;
+  }
+
+  .site-header {
+    margin-bottom: 0.8rem;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav:not(.nav-open) .nav-links {
+    display: none;
+  }
+
+  .site-nav.nav-open .nav-links {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 0.85rem 1rem;
+    width: min(92vw, 320px);
+    background: rgba(5, 15, 30, 0.95);
+    border: 1px solid rgba(0, 168, 255, 0.25);
+    border-radius: 12px;
+  }
+
+  .about-logo {
+    width: min(72vw, 310px);
+    max-width: 88%;
+    margin: 8px auto 18px;
+  }
+
+  .about-hero h1 {
+    font-size: 2.05rem;
+    margin: 0 0 14px;
+    line-height: 1.15;
+  }
+
+  .hero-tagline {
+    white-space: normal;
+    text-align: justify;
+    text-align-last: center;
+    font-size: 1.02rem;
+    line-height: 1.8;
+    padding: 0 8px;
+  }
+
+  .about-container {
+    width: 94%;
+    margin: 16px auto;
+  }
+
+  .card {
+    padding: 10px 18px 18px;
+  }
+
+  .card h2 {
+    font-size: 1.65rem;
+
+    margin-top: 0;
+
+    margin-bottom: 8px;
+
+    padding-bottom: 8px;
+  }
+
+  /* ONLY THE FIRST CARD (WELCOME) */
+
+  .about-container .card:first-child h2 {
+    font-size: 1.65rem !important;
+
+    margin: 0 0 6px 0 !important;
+
+    padding-bottom: 6px !important;
+
+    line-height: 1.1 !important;
+  }
+
+  .welcome-container {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 0px;
+
+    margin-top: 12px;
+  }
+
+  .profile-photo {
+    width: 140px;
+    max-width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 18px;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .welcome-text p {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    text-align: justify;
+  }
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media screen and (min-width: 769px) and (max-width: 1600px) and (hover: none) {
+  .about-logo {
+    width: 240px;
+    top: 30px;
+    left: 22px;
+  }
+
+  .about-hero {
+    padding: 16px 30px 14px;
+  }
+
+  .about-hero h1 {
+    margin: 6px 0 10px;
+  }
+
+  .hero-tagline {
+    max-width: 92%;
+    font-size: 1.08rem;
+    line-height: 1.45;
+    margin: 0 auto;
+  }
+
+  .about-container {
+    width: 92%;
+    margin: 12px auto;
+  }
+
+  .card {
+    padding: 22px;
+    margin-bottom: 24px;
+  }
+
+  .card h2 {
+    margin-bottom: 10px;
+  }
+
+  .welcome-container {
+    align-items: flex-start;
+    gap: 28px;
+    margin-top: 4px;
+  }
+
+  .profile-photo {
+    width: 170px;
+    height: auto;
+  }
+
+  .welcome-text p {
+    line-height: 1.75;
+  }
+}
+
+.about-hero a {
+  display: inline-block;
+}
+
+.about-logo {
+  cursor: pointer;
+}

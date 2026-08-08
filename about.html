@@ -55,7 +55,6 @@
     </header>
 
     <main class="page-container">
-
       <!-- ==========================================================
            CARD 1 — WELCOME
       ========================================================== -->
@@ -145,7 +144,7 @@
           healthcare.
         </p>
 
-          <h3>A Career in Healthcare</h3>
+        <h3>A Career in Healthcare</h3>
 
         <p>
           By the time I began studying Physiotherapy, my career path had already
@@ -278,48 +277,38 @@
            PAGE BUTTONS
       ========================================================== -->
       <div class="page-buttons">
-        <a href="index.html">Home</a>
-      </div>
+        <a href="index.html" class="active">Home</a>
 
+        <a href="about.html">About Me</a>
+
+        <a href="portfolio.html">Portfolio</a>
+
+        <a href="contact.html">Contact</a>
+      </div>
     </main>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-
         document.querySelectorAll(".site-nav").forEach(function (nav) {
-
           const toggle = nav.querySelector(".nav-toggle");
 
           if (!toggle) return;
 
           toggle.addEventListener("click", function () {
-
             const expanded = nav.classList.toggle("nav-open");
 
-            toggle.setAttribute(
-              "aria-expanded",
-              expanded ? "true" : "false"
-            );
-
+            toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
           });
 
           nav.querySelectorAll(".nav-links a").forEach(function (link) {
-
             link.addEventListener("click", function () {
-
               nav.classList.remove("nav-open");
 
               toggle.setAttribute("aria-expanded", "false");
-
             });
-
           });
-
         });
-
       });
     </script>
-
   </body>
 </html>
-      

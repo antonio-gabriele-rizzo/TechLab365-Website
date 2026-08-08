@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Microsoft 365 Administration | TechLab365</title>
+
+    <meta
+      name="description"
+      content="Microsoft 365 Administration portfolio — TechLab365."
+    />
+
+    <link rel="stylesheet" href="assets/css/m365-admin.css" />
+  </head>
+
+  <body>
+    <header class="page-hero">
+      <div class="site-header">
+        <a href="index.html" class="logo-link">
+          <img
+            src="assets/img/logo/TechLab365-Light.png"
+            alt="TechLab365 Logo"
+            class="site-logo"
+          />
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+              <a href="m365-admin.html" class="active">M365 Administration</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <h1>Microsoft 365 Administration</h1>
+
+      <p class="hero-tagline">
+        Microsoft 365 • Tenant Administration • Cloud Technologies
+      </p>
+    </header>
+
+    <main class="page-container">
+      <section class="card">
+        <h2>Portfolio Overview</h2>
+
+        <p>
+          This portfolio documents a hands-on Microsoft 365 Administration
+          laboratory developed within a dedicated Microsoft 365 Business Basic
+          tenant. The project provides practical experience with the day-to-day
+          responsibilities of a Microsoft 365 Administrator.
+        </p>
+
+        <p>
+          The work covers tenant configuration, identity and user management,
+          licence administration, Microsoft 365 Groups, Exchange Online,
+          SharePoint Online, Microsoft Teams, security administration and
+          Microsoft Graph PowerShell automation.
+        </p>
+
+        <p>
+          Rather than simply describing Microsoft 365 features, the project
+          documents practical configuration activities carried out within a
+          working tenant, supported by detailed explanations and annotated
+          screenshots in the associated technical documentation.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Portfolio Areas</h2>
+
+        <ul>
+          <li>Microsoft 365 tenant administration and configuration</li>
+          <li>User lifecycle and licence administration</li>
+          <li>Microsoft 365 Groups and collaboration resources</li>
+          <li>Exchange Online administration</li>
+          <li>SharePoint Online sites, document libraries and permissions</li>
+          <li>Microsoft Teams administration and collaboration</li>
+          <li>Microsoft 365 security and Microsoft Defender</li>
+          <li>Microsoft Graph PowerShell and administrative automation</li>
+        </ul>
+
+        <h3>Portfolio Page Status</h3>
+
+        <p>
+          The Microsoft 365 Administration project is completed and the full
+          technical documentation is available in the associated GitHub
+          repository.
+        </p>
+
+        <p>
+          This website page is currently an initial portfolio overview. A more
+          detailed and updated version, including selected screenshots and
+          additional implementation details, will be added to the TechLab365
+          website soon.
+        </p>
+
+        <div class="action-buttons">
+          <a
+            href="https://github.com/antonio-gabriele-rizzo/TechLab365-Microsoft-365-Administration-Portfolio"
+          >
+            View this Portfolio on GitHub
+          </a>
+        </div>
+      </section>
+
+      <div class="page-buttons">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".site-nav").forEach(function (nav) {
+          const toggle = nav.querySelector(".nav-toggle");
+
+          if (!toggle) return;
+
+          toggle.addEventListener("click", function () {
+            const expanded = nav.classList.toggle("nav-open");
+
+            toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+          });
+
+          nav.querySelectorAll(".nav-links a").forEach(function (link) {
+            link.addEventListener("click", function () {
+              nav.classList.remove("nav-open");
+
+              toggle.setAttribute("aria-expanded", "false");
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

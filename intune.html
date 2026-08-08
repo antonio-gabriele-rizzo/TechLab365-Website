@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Microsoft Intune Administration | TechLab365</title>
+
+    <meta
+      name="description"
+      content="Microsoft Intune Administration portfolio — TechLab365."
+    />
+
+    <link rel="stylesheet" href="assets/css/intune.css" />
+  </head>
+
+  <body>
+    <header class="page-hero">
+      <div class="site-header">
+        <a href="index.html" class="logo-link">
+          <img
+            src="assets/img/logo/TechLab365-Light.png"
+            alt="TechLab365 Logo"
+            class="site-logo"
+          />
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+              <a href="intune.html" class="active">Microsoft Intune</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <h1>Microsoft Intune Administration</h1>
+
+      <p class="hero-tagline">
+        Microsoft Intune • Endpoint Management • Android Enterprise
+      </p>
+    </header>
+
+    <main class="page-container">
+      <section class="card">
+        <h2>Portfolio Overview</h2>
+
+        <p>
+          This portfolio documents a hands-on Microsoft Intune Administration
+          laboratory developed within a Microsoft cloud environment using
+          Microsoft Intune, Microsoft Entra ID and a physical Android Enterprise
+          device.
+        </p>
+
+        <p>
+          The project demonstrates the complete lifecycle of Android Enterprise
+          device management, from creating and configuring the Intune laboratory
+          through device enrolment, application deployment, compliance
+          management, configuration profiles, device administration, monitoring
+          and troubleshooting.
+        </p>
+
+        <p>
+          Rather than simply describing Microsoft Intune features, the project
+          documents practical administrative activities performed while building
+          a working Intune environment. The technical documentation combines
+          explanations with annotated screenshots and reflects the day-to-day
+          responsibilities of an Endpoint Administrator.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Portfolio Areas</h2>
+
+        <ul>
+          <li>Microsoft Intune administration and endpoint management</li>
+          <li>Microsoft Entra ID users and Security Groups</li>
+          <li>Android Enterprise device enrolment using BYOD Work Profile</li>
+          <li>Managed Google Play application deployment</li>
+          <li>Compliance Policy administration</li>
+          <li>Configuration Profile deployment</li>
+          <li>Device management, monitoring and reporting</li>
+          <li>Microsoft Intune troubleshooting and operational support</li>
+        </ul>
+
+        <h3>Portfolio Page Status</h3>
+
+        <p>
+          The Microsoft Intune Administration project is completed and the
+          full technical documentation is available in the associated GitHub
+          repository.
+        </p>
+
+        <p>
+          This website page is currently an initial portfolio overview. A more
+          detailed and updated version, including selected screenshots and
+          additional implementation details, will be added to the TechLab365
+          website soon.
+        </p>
+
+        <div class="action-buttons">
+          <a
+            href="https://github.com/antonio-gabriele-rizzo/TechLab365-Microsoft-Intune-Administration-Portfolio"
+          >
+            View this Portfolio on GitHub
+          </a>
+        </div>
+      </section>
+
+      <div class="page-buttons">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".site-nav").forEach(function (nav) {
+          const toggle = nav.querySelector(".nav-toggle");
+
+          if (!toggle) return;
+
+          toggle.addEventListener("click", function () {
+            const expanded = nav.classList.toggle("nav-open");
+
+            toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+          });
+
+          nav.querySelectorAll(".nav-links a").forEach(function (link) {
+            link.addEventListener("click", function () {
+              nav.classList.remove("nav-open");
+
+              toggle.setAttribute("aria-expanded", "false");
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

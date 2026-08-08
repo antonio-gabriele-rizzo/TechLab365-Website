@@ -1,0 +1,350 @@
+/* ==========================================================
+   TechLab365 - Website Template
+   Master Layout for Internal Pages
+   ========================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+html,
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: Calibri, "Segoe UI", Arial, sans-serif;
+  color: #eaf3fb;
+  line-height: 1.8;
+  background:
+    linear-gradient(rgba(8, 21, 35, 0.6), rgba(8, 21, 35, 0.6)),
+    url("../img/backgrounds/about-background.png");
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: 700px auto;
+  background-color: #081523;
+}
+
+/* ==========================================================
+   HEADER
+   ========================================================== */
+
+.site-header {
+  position: relative;
+  width: min(100%, 1100px);
+  margin: -0.4rem auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.05rem;
+}
+
+.logo-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.site-logo {
+  position: static;
+  display: block;
+  width: clamp(235px, 29vw, 340px);
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+/* ==========================================================
+   NAVIGATION
+   ========================================================== */
+
+.site-nav {
+  width: 100%;
+}
+
+.nav-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #ffffff;
+}
+
+.nav-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(0.8rem, 1.2vw, 1.35rem);
+  list-style: none;
+  padding: 0.15rem 0;
+  margin: 0;
+}
+
+.nav-links a {
+  color: #f5f9fc;
+  text-decoration: none;
+  font-size: clamp(0.95rem, 1vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.3rem 0.15rem;
+  border-bottom: 2px solid transparent;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #66b9ff;
+  border-color: #66b9ff;
+}
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+
+.page-hero {
+  position: relative;
+  margin-top: 0.9rem;
+  padding: 0.8rem 1.25rem 1.2rem;
+  text-align: center;
+  background: linear-gradient(rgba(5, 15, 30, 0.88), rgba(5, 15, 30, 0.88));
+  border-bottom: 2px solid #00a8ff;
+}
+
+.page-hero h1 {
+  font-size: clamp(2.2rem, 3.4vw, 2.9rem);
+  color: #f2f2f2;
+  margin: 1.4rem 0 0.35rem;
+  line-height: 1.15;
+}
+
+.hero-tagline {
+  max-width: 1100px;
+  margin: 0 auto;
+  white-space: nowrap;
+  text-align: center;
+  color: #1ea7ff;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.page-container {
+  width: min(1100px, 92%);
+  margin: 1.1rem auto 1.5rem;
+}
+
+/* ==========================================================
+   CARDS
+   ========================================================== */
+
+.card {
+  background: #102235;
+  border: 1px solid rgba(0, 168, 255, 0.25);
+  border-radius: 16px;
+  padding: 1.1rem 1.35rem 1.2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.card h2 {
+  color: #00a8ff;
+  font-size: 1.7rem;
+  margin: 0 0 0.6rem;
+  border-bottom: 2px solid rgba(0, 168, 255, 0.25);
+  padding-bottom: 0.45rem;
+}
+
+.card h3 {
+  color: #1ea7ff;
+  font-size: 1.35rem;
+  margin: 1.4rem 0 0.7rem;
+  font-weight: 700;
+}
+
+.card p {
+  text-align: justify;
+  margin-bottom: 0.7rem;
+  line-height: 1.6;
+}
+
+.card ul {
+  margin: 0.8rem 0;
+  padding-left: 1.4rem;
+}
+
+.card li {
+  margin-bottom: 0.45rem;
+}
+
+/* ==========================================================
+   ACTION BUTTONS
+   ========================================================== */
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.action-buttons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.4rem;
+  border: 2px solid #00a8ff;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.action-buttons a:hover,
+.action-buttons a:focus-visible {
+  background: #00a8ff;
+}
+
+/* ==========================================================
+   PAGE NAVIGATION
+   ========================================================== */
+
+.page-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(0.75rem, 1.6vw, 1.25rem);
+  margin: 1.15rem 0 0;
+}
+
+.page-buttons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  padding: 0.85rem 1rem;
+  border: 2px solid #00a8ff;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.page-buttons a:hover,
+.page-buttons a:focus-visible,
+.page-buttons a.active {
+  background: #00a8ff;
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav:not(.nav-open) .nav-links {
+    display: none;
+  }
+
+  .site-nav.nav-open .nav-links {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 0.85rem 1rem;
+    width: min(92vw, 320px);
+    background: rgba(5, 15, 30, 0.95);
+    border: 1px solid rgba(0, 168, 255, 0.25);
+    border-radius: 12px;
+    margin: 0 auto 0.4rem;
+  }
+
+  .page-hero {
+    padding: 0.75rem 1rem 1rem;
+  }
+
+  .page-hero h1 {
+    font-size: 2.15rem;
+  }
+
+  .hero-tagline {
+    white-space: normal;
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .page-container {
+    width: 94%;
+    margin: 1rem auto;
+  }
+
+  .card {
+    padding: 1rem 1rem 1.1rem;
+  }
+
+  .card h2 {
+    font-size: 1.65rem;
+  }
+
+  .card h3 {
+    font-size: 1.25rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .action-buttons a {
+    width: 100%;
+  }
+
+  .page-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .page-buttons a {
+    width: 100%;
+  }
+
+}

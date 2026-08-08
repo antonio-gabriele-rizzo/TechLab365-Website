@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Microsoft Entra ID Administration | TechLab365</title>
+
+    <meta
+      name="description"
+      content="Microsoft Entra ID Administration portfolio — TechLab365."
+    />
+
+    <link rel="stylesheet" href="assets/css/entra-id.css" />
+  </head>
+
+  <body>
+    <header class="page-hero">
+      <div class="site-header">
+        <a href="index.html" class="logo-link">
+          <img
+            src="assets/img/logo/TechLab365-Light.png"
+            alt="TechLab365 Logo"
+            class="site-logo"
+          />
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+              <a href="entra-id.html" class="active">Entra ID Administration</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <h1>Microsoft Entra ID Administration</h1>
+
+      <p class="hero-tagline">
+        Microsoft Entra ID • Identity Management • Cloud Technologies
+      </p>
+    </header>
+
+    <main class="page-container">
+      <section class="card">
+        <h2>Portfolio Overview</h2>
+
+        <p>
+          This portfolio documents my hands-on learning journey in Microsoft
+          Entra ID administration using the same Microsoft 365 tenant developed
+          throughout the TechLab Microsoft 365 Portfolio.
+        </p>
+
+        <p>
+          The project focuses on practical cloud identity management,
+          including user and group administration, delegated administrative
+          roles, Multi-Factor Authentication, password management, monitoring,
+          audit logs and identity troubleshooting.
+        </p>
+
+        <p>
+          Each documented section combines step-by-step procedures, screenshots,
+          technical explanations and practical examples to provide a reusable
+          Microsoft Entra ID administration reference and demonstrate real-world
+          identity management tasks.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Portfolio Areas</h2>
+
+        <ul>
+          <li>Microsoft Entra ID fundamentals and cloud identity management</li>
+          <li>User lifecycle and account administration</li>
+          <li>Security Groups and Microsoft 365 Groups</li>
+          <li>Administrative roles, RBAC and delegated administration</li>
+          <li>Multi-Factor Authentication and authentication methods</li>
+          <li>Password management and account recovery</li>
+          <li>Sign-in and audit log monitoring</li>
+          <li>Microsoft Graph PowerShell administration</li>
+          <li>Identity troubleshooting and investigation</li>
+        </ul>
+
+        <h3>Portfolio Page Status</h3>
+
+        <p>
+          The Microsoft Entra ID Administration project is completed and the
+          full technical documentation is available in the associated GitHub
+          repository.
+        </p>
+
+        <p>
+          This website page is currently an initial portfolio overview. A more
+          detailed and updated version, including selected screenshots and
+          additional implementation details, will be added to the TechLab365
+          website soon.
+        </p>
+
+        <div class="action-buttons">
+          <a
+            href="https://github.com/antonio-gabriele-rizzo/TechLab365-Microsoft-Entra-ID-Administration-Portfolio"
+          >
+            View this Portfolio on GitHub
+          </a>
+        </div>
+      </section>
+
+      <div class="page-buttons">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".site-nav").forEach(function (nav) {
+          const toggle = nav.querySelector(".nav-toggle");
+
+          if (!toggle) return;
+
+          toggle.addEventListener("click", function () {
+            const expanded = nav.classList.toggle("nav-open");
+
+            toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+          });
+
+          nav.querySelectorAll(".nav-links a").forEach(function (link) {
+            link.addEventListener("click", function () {
+              nav.classList.remove("nav-open");
+
+              toggle.setAttribute("aria-expanded", "false");
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

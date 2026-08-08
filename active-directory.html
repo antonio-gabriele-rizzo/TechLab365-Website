@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Windows Server &amp; Active Directory Administration | TechLab365</title>
+
+    <meta
+      name="description"
+      content="Windows Server and Active Directory Administration portfolio — TechLab365."
+    />
+
+    <link rel="stylesheet" href="assets/css/active-directory.css" />
+  </head>
+
+  <body>
+    <header class="page-hero">
+      <div class="site-header">
+        <a href="index.html" class="logo-link">
+          <img
+            src="assets/img/logo/TechLab365-Light.png"
+            alt="TechLab365 Logo"
+            class="site-logo"
+          />
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+              <a href="active-directory.html" class="active">Active Directory Administration</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <h1>Windows Server &amp; Active Directory Administration</h1>
+
+      <p class="hero-tagline">
+        Windows Server • Active Directory • Windows Infrastructure
+      </p>
+    </header>
+
+    <main class="page-container">
+      <section class="card">
+        <h2>Portfolio Overview</h2>
+
+        <p>
+          This portfolio documents a hands-on Windows Server and Active
+          Directory Administration laboratory developed from scratch within a
+          virtualised environment using Oracle VirtualBox, Windows Server and
+          Windows 11.
+        </p>
+
+        <p>
+          The project begins with the preparation of the virtual laboratory and
+          progresses through Windows Server and Windows 11 installation,
+          Active Directory Domain Services, domain administration and the core
+          Windows Server services required to operate an enterprise network.
+        </p>
+
+        <p>
+          The repository is the next stage of the TechLab365 learning journey,
+          extending the Microsoft cloud administration work into traditional
+          Windows infrastructure and demonstrating how on-premises identity
+          services complement modern Microsoft cloud technologies.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Portfolio Areas</h2>
+
+        <ul>
+          <li>Oracle VirtualBox virtual laboratory deployment</li>
+          <li>Windows Server 2022 installation and configuration</li>
+          <li>Windows 11 client installation and domain integration</li>
+          <li>Active Directory Domain Services and domain administration</li>
+          <li>User, group and Organisational Unit management</li>
+          <li>Group Policy administration</li>
+          <li>DNS and DHCP administration</li>
+          <li>File Server and NTFS permissions</li>
+          <li>Windows Server and Active Directory troubleshooting</li>
+        </ul>
+
+        <h3>Portfolio Page Status</h3>
+
+        <p>
+          This project is currently under development. The information
+          presented here provides an initial overview based on the current
+          project documentation.
+        </p>
+
+        <p>
+          A complete and expanded portfolio page, including selected
+          screenshots, practical implementation details and further technical
+          information, will be published as the project develops.
+        </p>
+
+        <div class="action-buttons">
+          <a
+            href="https://github.com/antonio-gabriele-rizzo/TechLab365-Windows-Server-Active-Directory-Administration-Portfolio"
+          >
+            View this Portfolio on GitHub
+          </a>
+        </div>
+      </section>
+
+      <div class="page-buttons">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".site-nav").forEach(function (nav) {
+          const toggle = nav.querySelector(".nav-toggle");
+
+          if (!toggle) return;
+
+          toggle.addEventListener("click", function () {
+            const expanded = nav.classList.toggle("nav-open");
+
+            toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+          });
+
+          nav.querySelectorAll(".nav-links a").forEach(function (link) {
+            link.addEventListener("click", function () {
+              nav.classList.remove("nav-open");
+
+              toggle.setAttribute("aria-expanded", "false");
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
