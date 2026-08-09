@@ -214,6 +214,7 @@ h2 {
   justify-self: end;
   width: min(35vw, 520px);
   max-width: 100%;
+  margin-top: clamp(-5rem, -2.4vw, -1rem);
   z-index: 2;
   pointer-events: none;
 }
@@ -235,7 +236,7 @@ h2 {
   grid-row: 1;
   width: min(100%, 760px);
   max-width: 100%;
-  margin-top: 0;
+  margin-top: clamp(-2rem, -1.5vw, -1rem);
   padding-left: clamp(0.25rem, 3vw, 3rem);
   z-index: 5;
 }
@@ -245,7 +246,7 @@ h2 {
   line-height: 1.12;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: clamp(0.9rem, 1.7vw, 1.4rem);
+  margin-bottom: clamp(0.4rem, 0.7vw, 0.65rem);
 }
 
 .hero-content h1 span {
@@ -257,7 +258,7 @@ h2 {
   font-size: clamp(1rem, 1.1vw, 1.15rem);
   font-weight: 500;
   color: #dfeaf7;
-  margin-bottom: clamp(0.25rem, 0.45vw, 0.45rem);
+  margin-bottom: clamp(1.8rem, 2.4vw, 2.4rem);
 }
 
 .hero-icons {
@@ -266,7 +267,7 @@ h2 {
   justify-content: start;
   align-items: start;
   gap: clamp(0.35rem, 0.65vw, 0.55rem);
-  margin-bottom: clamp(0.1rem, 0.25vw, 0.2rem);
+  margin-bottom: clamp(1rem, 1.5vw, 1.4rem);
 }
 
 .hero-icon {
@@ -301,7 +302,7 @@ h2 {
 
 .hero-content h2 {
   font-size: clamp(1.7rem, 2vw, 2rem);
-  margin-top: clamp(0.1rem, 0.25vw, 0.2rem);
+  margin-top: clamp(1rem, 1.5vw, 1.4rem);
   margin-bottom: 6px;
   color: #19a7ff;
   font-weight: 700;
@@ -314,6 +315,35 @@ h2 {
   text-align: justify;
   color: #eaf3fb;
   margin-bottom: 18px;
+}
+
+/* =====================================
+   Certification Highlights
+===================================== */
+
+.certification-highlights {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: clamp(1.5rem, 2.5vw, 2.5rem);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.certification-highlight {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: #ffffff;
+  font-size: clamp(0.8rem, 0.9vw, 0.9rem);
+  font-weight: 600;
+}
+
+.certification-highlight img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  display: block;
 }
 
 /* ==========================================================
@@ -331,31 +361,46 @@ h2 {
   }
 
   .home-logo {
-    width: min(70vw, 320px);
-    max-width: 85%;
-  }
-
-  .nav-toggle {
-    display: flex;
-  }
-
-  .site-nav:not(.nav-open) .nav-links {
-    display: none;
-  }
-
-  .site-nav.nav-open .nav-links {
-    display: flex;
+    width: clamp(235px, 29vw, 340px);
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
   }
 
   .nav-links {
-    flex-direction: column;
-    gap: 0.8rem;
-    padding: 0.85rem 1rem;
-    margin-top: 0.25rem;
-    width: min(92vw, 320px);
-    background: rgba(5, 15, 30, 0.95);
-    border: 1px solid rgba(0, 168, 255, 0.25);
-    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.45rem 2rem;
+    width: min(94vw, 520px);
+    margin: 0 auto 0.4rem;
+    padding: 0.15rem 0;
+    list-style: none;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.25rem 0.15rem;
+  }
+
+  /*
+     Mobile navigation:
+     prevent persistent touch-hover styling on mobile.
+     The active page is controlled by the JavaScript in index.html.
+  */
+  .nav-links a:hover {
+    color: #f5f9fc;
+    border-color: transparent;
+  }
+
+  .nav-links a.active {
+    color: #66b9ff;
+    border-color: #66b9ff;
   }
 
   .hero-illustration {
@@ -427,6 +472,41 @@ h2 {
     text-align: justify;
     text-justify: inter-word;
     hyphens: auto;
+  }
+
+  .certification-highlights {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    width: 100%;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .certification-highlight {
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .certification-highlight img {
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
+  }
+
+  .certification-highlight span {
+    flex: 1;
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: break-word;
   }
 
   .buttons {
@@ -510,7 +590,7 @@ h2 {
   }
 
   .hero-content {
-    margin-top: clamp(2rem, 3vw, 3.4rem);
+    margin-top: clamp(-2.5rem, -1.5vw, -1rem);
   }
 
   .hero-illustration {

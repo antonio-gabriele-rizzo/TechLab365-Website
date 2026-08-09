@@ -1,4 +1,4 @@
-/* ==========================================================
+/* /* ==========================================================
    TechLab365 - About Page 
    ========================================================== */
 
@@ -252,6 +252,80 @@ body {
 }
 
 /* ==========================================================
+   CERTIFICATIONS & PROFESSIONAL DEVELOPMENT
+   ========================================================== */
+
+.certification-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+.certification-item {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.9rem 1rem;
+  background: #0b314d;
+  border: 1px solid rgba(0, 168, 255, 0.45);
+  border-radius: 14px;
+  text-align: left;
+}
+
+.certification-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+}
+
+.certification-item img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  display: block;
+}
+
+.certification-content {
+  min-width: 0;
+}
+
+.certification-content h3 {
+  margin: 0 0 0.45rem;
+  color: #1ea7ff;
+  font-size: 1.25rem;
+}
+
+.certification-content p {
+  margin: 0 0 0.45rem;
+  text-align: left;
+  line-height: 1.55;
+}
+
+.certification-content p:last-child {
+  margin-bottom: 0;
+}
+
+.certification-score {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.45rem !important;
+}
+
+.certification-score strong {
+  color: #ffffff;
+}
+
+.certification-score span {
+  color: #66b9ff;
+  font-weight: 700;
+}
+
+/* ==========================================================
    PAGE BUTTONS
    ========================================================== */
 
@@ -291,27 +365,44 @@ body {
    ========================================================== */
 
 @media (max-width: 768px) {
+  /* Mobile navigation - always visible, two-column layout */
   .nav-toggle {
-    display: flex;
-  }
-
-  .site-nav:not(.nav-open) .nav-links {
     display: none;
   }
 
-  .site-nav.nav-open .nav-links {
-    display: flex;
+  .nav-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: center;
+    align-items: center;
+    gap: 0.45rem 2rem;
+    width: min(94vw, 520px);
+    margin: 0 auto 0.4rem;
+    padding: 0.15rem 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
   }
 
-  .nav-links {
-    flex-direction: column;
-    gap: 0.8rem;
-    padding: 0.85rem 1rem;
-    width: min(92vw, 320px);
-    background: rgba(5, 15, 30, 0.95);
-    border: 1px solid rgba(0, 168, 255, 0.25);
-    border-radius: 12px;
-    margin: 0 auto 0.4rem;
+  .nav-links li {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* ----------------------------------------------------------
+     MOBILE NAVIGATION
+     Prevent persistent touch-hover states after Android
+     Back/Forward navigation.
+     ---------------------------------------------------------- */
+
+  .nav-links a:hover {
+    color: #f5f9fc;
+    border-color: transparent;
+  }
+
+  .nav-links a.active {
+    color: #66b9ff;
+    border-color: #66b9ff;
   }
 
   .page-hero {
@@ -352,6 +443,25 @@ body {
     font-size: 1.08rem;
     line-height: 1.85;
   }
+
+  .certification-item {
+    grid-template-columns: 95px minmax(0, 1fr);
+    gap: 0.9rem;
+    padding: 0.8rem;
+  }
+
+  .certification-logo {
+    min-height: 90px;
+  }
+
+  .certification-item img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .certification-content h3 {
+    font-size: 1.15rem;
+  }
 }
 
 /* ==========================================================
@@ -369,5 +479,25 @@ body {
 
   .welcome-text p {
     line-height: 1.75;
+  }
+}
+
+@media (max-width: 480px) {
+  .certification-item {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .certification-logo {
+    min-height: 85px;
+  }
+
+  .certification-content p,
+  .certification-content h3 {
+    text-align: center;
+  }
+
+  .certification-score {
+    justify-content: center;
   }
 }

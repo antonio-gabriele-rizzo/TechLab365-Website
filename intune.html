@@ -26,26 +26,29 @@
         </a>
 
         <nav class="site-nav" aria-label="Primary">
-          <button
-            class="nav-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-
           <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Me</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="contact.html">Contact</a></li>
+
+            <!--
+              DESKTOP:
+              Microsoft Intune is the fifth menu item.
+
+              MOBILE:
+              The fifth item is hidden and the same link is displayed
+              in .portfolio-mobile-current as the centred third row.
+            -->
             <li>
-              <a href="intune.html" class="active">Microsoft Intune</a>
+              <a href="intune.html">Microsoft Intune</a>
             </li>
           </ul>
+
+          <!-- MOBILE ONLY: centred third row -->
+          <div class="portfolio-mobile-current">
+            <a href="intune.html">Microsoft Intune</a>
+          </div>
         </nav>
       </div>
 
@@ -131,26 +134,72 @@
     </main>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".site-nav").forEach(function (nav) {
-          const toggle = nav.querySelector(".nav-toggle");
+      function setActiveNavigation() {
+        const currentPage =
+          window.location.pathname.split("/").pop() || "index.html";
 
-          if (!toggle) return;
-
-          toggle.addEventListener("click", function () {
-            const expanded = nav.classList.toggle("nav-open");
-
-            toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+        /*
+         * Remove every previous active state.
+         * This prevents a stale/double selection when Android
+         * restores a page through Back/Forward navigation.
+         */
+        document
+          .querySelectorAll(".nav-links a, .portfolio-mobile-current a")
+          .forEach(function (link) {
+            link.classList.remove("active");
+            link.removeAttribute("aria-current");
           });
 
-          nav.querySelectorAll(".nav-links a").forEach(function (link) {
-            link.addEventListener("click", function () {
-              nav.classList.remove("nav-open");
-
-              toggle.setAttribute("aria-expanded", "false");
-            });
+        /*
+         * Activate the matching desktop navigation item.
+         */
+        document
+          .querySelectorAll(".nav-links a")
+          .forEach(function (link) {
+            if (link.getAttribute("href") === currentPage) {
+              link.classList.add("active");
+              link.setAttribute("aria-current", "page");
+            }
           });
-        });
+
+        /*
+         * Activate the separate centred mobile portfolio link.
+         */
+        const mobilePortfolio = document.querySelector(
+          ".portfolio-mobile-current a"
+        );
+
+        if (
+          mobilePortfolio &&
+          mobilePortfolio.getAttribute("href") === currentPage
+        ) {
+          mobilePortfolio.classList.add("active");
+          mobilePortfolio.setAttribute("aria-current", "page");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", setActiveNavigation);
+
+      /* Android/mobile Back and Forward navigation */
+      window.addEventListener("pageshow", setActiveNavigation);
+
+      /* Recalculate when the page becomes visible again */
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+          setActiveNavigation();
+        }
+      });
+
+      window.addEventListener("popstate", setActiveNavigation);
+
+      /* Clear stale active states before leaving the page */
+      window.addEventListener("pagehide", function () {
+        document
+          .querySelectorAll(".nav-links a, .portfolio-mobile-current a")
+          .forEach(function (link) {
+            link.classList.remove("active");
+            link.removeAttribute("aria-current");
+          });
       });
     </script>
   </body>

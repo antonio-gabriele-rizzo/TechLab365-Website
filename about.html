@@ -26,20 +26,9 @@
         </a>
 
         <nav class="site-nav" aria-label="Primary">
-          <button
-            class="nav-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-
           <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" class="active">About Me</a></li>
+            <li><a href="about.html">About Me</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -234,7 +223,115 @@
       </section>
 
       <!-- ==========================================================
-           CARD 4 — TECHNICAL SKILLS
+           CARD 4 — CERTIFICATIONS & PROFESSIONAL DEVELOPMENT
+      ========================================================== -->
+      <section class="card">
+        <h2>Certifications & Professional Development</h2>
+
+        <div class="certification-list">
+          <!-- CompTIA A+ -->
+          <div class="certification-item">
+            <div class="certification-logo">
+              <img src="assets/img/icons/comptia-a-plus.png" alt="CompTIA A+" />
+            </div>
+
+            <div class="certification-content">
+              <p class="certification-score">
+                <strong>Core 1 — 803/900</strong>
+                <span>•</span>
+                <strong>Core 2 — 848/900</strong>
+              </p>
+
+              <p>
+                Certified June 2026. Demonstrates a strong foundation in
+                hardware, operating systems, troubleshooting, networking,
+                security and IT support.
+              </p>
+            </div>
+          </div>
+
+          <!-- CompTIA Tech+ -->
+          <div class="certification-item">
+            <div class="certification-logo">
+              <img
+                src="assets/img/icons/comptia-tech-plus.png"
+                alt="CompTIA Tech+"
+              />
+            </div>
+
+            <div class="certification-content">
+              <p>
+                Certified December 2025. Foundation in modern technology
+                concepts, computing, networking, cybersecurity and digital
+                technology.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cisco Networking Academy -->
+          <div class="certification-item">
+            <div class="certification-logo">
+              <img
+                src="assets/img/icons/cisco-networking-academy.png"
+                alt="Cisco Networking Academy"
+              />
+            </div>
+
+            <div class="certification-content">
+              <h3>Cisco IT Customer Support Basics</h3>
+
+              <p>
+                Cisco Networking Academy training focused on IT customer
+                support, troubleshooting and practical technical support
+                fundamentals.
+              </p>
+            </div>
+          </div>
+
+          <!-- Level 3 IT Support -->
+          <div class="certification-item">
+            <div class="certification-logo">
+              <img
+                src="assets/img/icons/level-3-it.png"
+                alt="Level 3 IT Support"
+              />
+            </div>
+
+            <div class="certification-content">
+              <h3>Level 3 IT Support Essentials</h3>
+
+              <p>
+                Completed as part of my professional IT transition, supporting
+                the development of first-line IT support, troubleshooting and
+                technical problem-solving skills.
+              </p>
+            </div>
+          </div>
+
+          <!-- Level 3 Cyber Security -->
+          <div class="certification-item">
+            <div class="certification-logo">
+              <img
+                src="assets/img/icons/level-3-cyber-security.png"
+                alt="Level 3 Cyber Security"
+              />
+            </div>
+
+            <div class="certification-content">
+              <h3>Level 3 Cyber Security</h3>
+
+              <p>
+                Completed as part of my professional IT transition, covering
+                fundamental cybersecurity concepts and security awareness
+                relevant to modern IT support environments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================
+           CARD 5 — TECHNICAL SKILLS
       ========================================================== -->
       <section class="card">
         <h2>Technical Skills &amp; Technologies</h2>
@@ -258,7 +355,7 @@
       </section>
 
       <!-- ==========================================================
-           CARD 5 — CAREER OBJECTIVE
+           CARD 6 — CAREER OBJECTIVE
       ========================================================== -->
       <section class="card">
         <h2>Career Objective</h2>
@@ -277,7 +374,7 @@
            PAGE BUTTONS
       ========================================================== -->
       <div class="page-buttons">
-        <a href="index.html" class="active">Home</a>
+        <a href="index.html">Home</a>
 
         <a href="about.html">About Me</a>
 
@@ -286,29 +383,29 @@
         <a href="contact.html">Contact</a>
       </div>
     </main>
-
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".site-nav").forEach(function (nav) {
-          const toggle = nav.querySelector(".nav-toggle");
+      function setActiveNavigation() {
+        const currentPage =
+          window.location.pathname.split("/").pop() || "index.html";
 
-          if (!toggle) return;
-
-          toggle.addEventListener("click", function () {
-            const expanded = nav.classList.toggle("nav-open");
-
-            toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
-          });
-
-          nav.querySelectorAll(".nav-links a").forEach(function (link) {
-            link.addEventListener("click", function () {
-              nav.classList.remove("nav-open");
-
-              toggle.setAttribute("aria-expanded", "false");
-            });
-          });
+        /* Remove every active state first */
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+          link.classList.remove("active");
         });
-      });
+
+        /* Activate only the link belonging to the current page */
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+          if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+          }
+        });
+      }
+
+      /* Normal page loading */
+      document.addEventListener("DOMContentLoaded", setActiveNavigation);
+
+      /* Browser Back / Forward, including mobile bfcache restoration */
+      window.addEventListener("pageshow", setActiveNavigation);
     </script>
   </body>
 </html>

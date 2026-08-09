@@ -26,26 +26,19 @@
         </a>
 
         <nav class="site-nav" aria-label="Primary">
-          <button
-            class="nav-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-
           <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Me</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li>
-              <a href="entra-id.html" class="active">Entra ID Administration</a>
+              <a href="entra-id.html">Entra ID Administration</a>
             </li>
           </ul>
+
+          <div class="portfolio-mobile-current">
+            <a href="entra-id.html">Entra ID Administration</a>
+          </div>
         </nav>
       </div>
 
@@ -129,26 +122,55 @@
     </main>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".site-nav").forEach(function (nav) {
-          const toggle = nav.querySelector(".nav-toggle");
+      function setActiveNavigation() {
+        const currentPage =
+          window.location.pathname.split("/").pop() || "index.html";
 
-          if (!toggle) return;
-
-          toggle.addEventListener("click", function () {
-            const expanded = nav.classList.toggle("nav-open");
-
-            toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+        document
+          .querySelectorAll(".nav-links a, .portfolio-mobile-current a")
+          .forEach(function (link) {
+            link.classList.remove("active");
+            link.removeAttribute("aria-current");
           });
 
-          nav.querySelectorAll(".nav-links a").forEach(function (link) {
-            link.addEventListener("click", function () {
-              nav.classList.remove("nav-open");
-
-              toggle.setAttribute("aria-expanded", "false");
-            });
-          });
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+          if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+            link.setAttribute("aria-current", "page");
+          }
         });
+
+        const mobilePortfolio = document.querySelector(
+          ".portfolio-mobile-current a"
+        );
+
+        if (
+          mobilePortfolio &&
+          mobilePortfolio.getAttribute("href") === currentPage
+        ) {
+          mobilePortfolio.classList.add("active");
+          mobilePortfolio.setAttribute("aria-current", "page");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", setActiveNavigation);
+      window.addEventListener("pageshow", setActiveNavigation);
+
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+          setActiveNavigation();
+        }
+      });
+
+      window.addEventListener("popstate", setActiveNavigation);
+
+      window.addEventListener("pagehide", function () {
+        document
+          .querySelectorAll(".nav-links a, .portfolio-mobile-current a")
+          .forEach(function (link) {
+            link.classList.remove("active");
+            link.removeAttribute("aria-current");
+          });
       });
     </script>
   </body>

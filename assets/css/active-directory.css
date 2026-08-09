@@ -1,7 +1,7 @@
-/* ==========================================================
-   TechLab365 - Website Template
-   Master Layout for Internal Pages
-   ========================================================== */
+/*
+   TechLab365 - Portfolio Page
+   Based on the uploaded portfolio master template.
+*/
 
 * {
   box-sizing: border-box;
@@ -123,6 +123,10 @@ body {
   border-color: #66b9ff;
 }
 
+.portfolio-mobile-current {
+  display: none;
+}
+
 /* ==========================================================
    HERO
    ========================================================== */
@@ -235,7 +239,7 @@ body {
 }
 
 /* ==========================================================
-   PAGE NAVIGATION
+   PAGE BUTTONS
    ========================================================== */
 
 .page-buttons {
@@ -276,26 +280,68 @@ body {
 @media (max-width: 768px) {
 
   .nav-toggle {
-    display: flex;
-  }
-
-  .site-nav:not(.nav-open) .nav-links {
     display: none;
   }
 
-  .site-nav.nav-open .nav-links {
-    display: flex;
+  .nav-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: center;
+    align-items: center;
+    gap: 0.45rem 2rem;
+    width: min(94vw, 520px);
+    margin: 0 auto 0.4rem;
+    padding: 0.15rem 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
   }
 
-  .nav-links {
-    flex-direction: column;
-    gap: 0.8rem;
-    padding: 0.85rem 1rem;
-    width: min(92vw, 320px);
-    background: rgba(5, 15, 30, 0.95);
-    border: 1px solid rgba(0, 168, 255, 0.25);
-    border-radius: 12px;
-    margin: 0 auto 0.4rem;
+  .nav-links li {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-links a:hover {
+    color: #f5f9fc;
+    border-color: transparent;
+  }
+
+  .nav-links a.active {
+    color: #66b9ff;
+    border-color: #66b9ff;
+  }
+
+  .nav-links li:nth-child(5) {
+    display: none;
+  }
+
+  .portfolio-mobile-current {
+    display: block;
+    width: min(94vw, 520px);
+    margin: 0.35rem auto 0;
+    text-align: center;
+  }
+
+  .portfolio-mobile-current a {
+    display: inline-block;
+    color: #f5f9fc;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 0.3rem 0.15rem;
+    border-bottom: 2px solid transparent;
+  }
+
+  .portfolio-mobile-current a.active {
+    color: #66b9ff;
+    border-color: #66b9ff;
+  }
+
+  .portfolio-mobile-current a:hover {
+    color: #f5f9fc;
+    border-color: transparent;
   }
 
   .page-hero {
@@ -346,5 +392,25 @@ body {
   .page-buttons a {
     width: 100%;
   }
+}
 
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media screen and (min-width: 769px) and (max-width: 1600px) and (hover: none) {
+}
+
+/* ==========================================================
+   SMALL MOBILE
+   ========================================================== */
+
+@media (max-width: 480px) {
+  .card h2 {
+    font-size: 1.55rem;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+  }
 }

@@ -1,5 +1,10 @@
-/* ==========================================================
+/*
    TechLab365 - Contact Page
+   Based on the upgraded TechLab365 master template
+*/
+
+/* ==========================================================
+   GLOBAL
    ========================================================== */
 
 * {
@@ -122,6 +127,12 @@ body {
   border-color: #66b9ff;
 }
 
+/* Contact is not a portfolio page, so there is no
+   mobile third-row current-portfolio link. */
+.portfolio-mobile-current {
+  display: none;
+}
+
 /* ==========================================================
    HERO
    ========================================================== */
@@ -131,7 +142,10 @@ body {
   margin-top: 0.9rem;
   padding: 0.8rem 1.25rem 1.2rem;
   text-align: center;
-  background: linear-gradient(rgba(5, 15, 30, 0.88), rgba(5, 15, 30, 0.88));
+  background: linear-gradient(
+    rgba(5, 15, 30, 0.88),
+    rgba(5, 15, 30, 0.88)
+  );
   border-bottom: 2px solid #00a8ff;
   width: 100%;
 }
@@ -200,41 +214,6 @@ body {
 
 .card li {
   margin-bottom: 0.45rem;
-}
-
-/* ==========================================================
-   ACTION BUTTONS
-   ========================================================== */
-
-.page-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: clamp(0.75rem, 1.6vw, 1.25rem);
-  margin: 1.15rem 0 0;
-}
-
-.page-buttons a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 110px;
-  padding: 0.85rem 1rem;
-  border: 2px solid #00a8ff;
-  border-radius: 999px;
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 700;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
-}
-
-.page-buttons a:hover,
-.page-buttons a:focus-visible,
-.page-buttons a.active {
-  background: #00a8ff;
 }
 
 /* ==========================================================
@@ -310,26 +289,38 @@ body {
 
 @media (max-width: 768px) {
   .nav-toggle {
-    display: flex;
-  }
-
-  .site-nav:not(.nav-open) .nav-links {
     display: none;
   }
 
-  .site-nav.nav-open .nav-links {
-    display: flex;
+  .nav-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: center;
+    align-items: center;
+    gap: 0.45rem 2rem;
+    width: min(94vw, 520px);
+    margin: 0 auto 0.4rem;
+    padding: 0.15rem 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
   }
 
-  .nav-links {
-    flex-direction: column;
-    gap: 0.8rem;
-    padding: 0.85rem 1rem;
-    width: min(92vw, 320px);
-    background: rgba(5, 15, 30, 0.95);
-    border: 1px solid rgba(0, 168, 255, 0.25);
-    border-radius: 12px;
-    margin: 0 auto 0.4rem;
+  .nav-links li {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Prevent persistent touch-hover states after Android
+     Back/Forward navigation. */
+  .nav-links a:hover {
+    color: #f5f9fc;
+    border-color: transparent;
+  }
+
+  .nav-links a.active {
+    color: #66b9ff;
+    border-color: #66b9ff;
   }
 
   .page-hero {
@@ -369,6 +360,15 @@ body {
   }
 
   .page-buttons a {
+    width: 100%;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-buttons a {
     width: 100%;
   }
 }

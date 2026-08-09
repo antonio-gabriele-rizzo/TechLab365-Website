@@ -3,12 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio | TechLab365</title>
-    <meta
-      name="description"
-      content="Professional Microsoft 365, Intune, Entra ID and Active Directory portfolio."
-    />
-    <link rel="stylesheet" href="assets/css/portfolio.css" />
+    <title>TechLab365</title>
+    <meta name="description" content="TechLab365 - Microsoft Administration, Cloud Technologies and Windows Infrastructure." />
+    <link rel="stylesheet" href="assets/css/index.css" />
   </head>
 
   <body>
@@ -28,7 +25,7 @@
         </nav>
       </div>
 
-      <h1>Portfolio</h1>
+      <h1>Welcome to TechLab365</h1>
       <p class="hero-tagline">
         Microsoft Administration • Cloud Technologies • Windows Infrastructure
       </p>
@@ -36,51 +33,20 @@
 
     <main class="page-container">
       <section class="card">
-        <h2>Professional Portfolio</h2>
+        <h2>Technology evolves. Curiosity drives excellence.</h2>
         <p>
-          Welcome to my technical portfolio. Here you will find a collection of
-          practical Microsoft administration projects developed and implemented
-          within a fully operational Microsoft 365 tenant that I actively
-          maintain and use for my own office environment.
-        </p>
-        <p>
-          Every published portfolio reflects genuine hands-on experience in
-          Microsoft administration, configuration, troubleshooting and best
-          practices.
+          TechLab365 is a technical portfolio focused on Microsoft administration,
+          cloud technologies and Windows infrastructure.
         </p>
       </section>
 
       <section class="card">
-        <h2>Choose a Portfolio</h2>
-        <div class="portfolio-buttons">
-          <a href="m365-admin.html">Microsoft 365 Administration</a>
-          <a href="intune.html">Microsoft Intune</a>
-          <a href="entra-id.html">Microsoft Entra ID</a>
-          <a href="active-directory.html">Active Directory</a>
-        </div>
-      </section>
-
-      <section class="card">
-        <h2>Why GitHub?</h2>
+        <h2>Technical Portfolio</h2>
         <p>
-          The TechLab365 website provides a structured summary of each
-          portfolio, while GitHub contains the complete project documentation,
-          configuration steps, PowerShell scripts, screenshots and
-          implementation details.
-        </p>
-        <p>
-          This approach allows visitors to quickly understand each project
-          before exploring the full technical documentation available in the
-          associated GitHub repository.
+          Explore practical projects, technical documentation and portfolio
+          content developed from hands-on experience.
         </p>
       </section>
-
-      <div class="page-buttons">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
-        <a href="portfolio.html" class="active">Portfolio</a>
-        <a href="contact.html">Contact</a>
-      </div>
     </main>
 
     <script>
@@ -88,14 +54,10 @@
         const currentPage =
           window.location.pathname.split("/").pop() || "index.html";
 
-        document
-          .querySelectorAll(".nav-links a, .portfolio-mobile-current a")
-          .forEach(function (link) {
-            link.classList.remove("active");
-            link.removeAttribute("aria-current");
-          });
-
         document.querySelectorAll(".nav-links a").forEach(function (link) {
+          link.classList.remove("active");
+          link.removeAttribute("aria-current");
+
           if (link.getAttribute("href") === currentPage) {
             link.classList.add("active");
             link.setAttribute("aria-current", "page");

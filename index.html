@@ -25,18 +25,8 @@
       </a>
 
       <nav class="site-nav" aria-label="Primary">
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
         <ul class="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Me</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -104,32 +94,98 @@
           and documents real administrative tasks, configurations and technical
           solutions.
         </p>
+
+        <div class="certification-highlights">
+          <div class="certification-highlight">
+            <img src="assets/img/icons/comptia-a-plus.png" alt="CompTIA A+" />
+            <span>CompTIA A+</span>
+          </div>
+
+          <div class="certification-highlight">
+            <img
+              src="assets/img/icons/comptia-tech-plus.png"
+              alt="CompTIA Tech+"
+            />
+            <span>CompTIA Tech+</span>
+          </div>
+
+          <div class="certification-highlight">
+            <img
+              src="assets/img/icons/cisco-networking-academy.png"
+              alt="Cisco Networking Academy"
+            />
+            <span>Cisco Networking Academy</span>
+          </div>
+        </div>
       </div>
+
+      <p class="work-progress"></p>
 
       <p class="work-progress">
         New Microsoft 365 projects, technical documentation and portfolio
         content are published regularly.
       </p>
     </main>
+  
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".site-nav").forEach(function (nav) {
-          const toggle = nav.querySelector(".nav-toggle");
-          if (!toggle) return;
+      function setActiveNavigation() {
+        const currentPage =
+          window.location.pathname.split("/").pop() || "index.html";
 
-          toggle.addEventListener("click", function () {
-            const expanded = nav.classList.toggle("nav-open");
-            toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
-          });
+        /*
+         * Remove every active state first.
+         * This prevents a stale Home highlight when the page
+         * is restored through mobile Back/Forward navigation.
+         */
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+          link.classList.remove("active");
+          link.removeAttribute("aria-current");
+        });
 
-          nav.querySelectorAll(".nav-links a").forEach(function (link) {
-            link.addEventListener("click", function () {
-              nav.classList.remove("nav-open");
-              toggle.setAttribute("aria-expanded", "false");
-            });
-          });
+        /*
+         * Activate only the navigation item belonging
+         * to the page currently being displayed.
+         */
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+          if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+            link.setAttribute("aria-current", "page");
+          }
+        });
+      }
+
+      /* Normal page loading */
+      document.addEventListener("DOMContentLoaded", setActiveNavigation);
+
+      /*
+       * Important for Android/mobile Back and Forward navigation.
+       * This recalculates the active item when the page is restored
+       * from the browser's back-forward cache.
+       */
+      window.addEventListener("pageshow", setActiveNavigation);
+
+      /*
+       * Recalculate when the page becomes visible again.
+       */
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+          setActiveNavigation();
+        }
+      });
+
+      window.addEventListener("popstate", setActiveNavigation);
+
+      /*
+       * Clear the active state before leaving so a restored page
+       * cannot retain a stale selection.
+       */
+      window.addEventListener("pagehide", function () {
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+          link.classList.remove("active");
+          link.removeAttribute("aria-current");
         });
       });
     </script>
+
   </body>
 </html>

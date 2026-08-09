@@ -3,14 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Contact | TechLab365</title>
-
-    <meta
-      name="description"
-      content="Contact TechLab365"
-    />
-
+    <meta name="description" content="Contact TechLab365" />
     <link rel="stylesheet" href="assets/css/contact.css" />
   </head>
 
@@ -18,11 +12,7 @@
     <header class="page-hero">
       <div class="site-header">
         <a href="index.html" class="logo-link">
-          <img
-            src="assets/img/logo/TechLab365-Light.png"
-            alt="TechLab365 Logo"
-            class="site-logo"
-          />
+          <img src="assets/img/logo/TechLab365-Light.png" alt="TechLab365 Logo" class="site-logo" />
         </a>
 
         <nav class="site-nav" aria-label="Primary">
@@ -36,7 +26,6 @@
       </div>
 
       <h1>Contact</h1>
-
       <p class="hero-tagline">
         Microsoft Administration • Cloud Technologies • Windows Infrastructure
       </p>
@@ -45,15 +34,12 @@
     <main class="page-container">
       <section class="card">
         <h2>Get in Touch</h2>
-
         <p>Thank you for visiting TechLab365.</p>
-
         <p>
           Whether you would like to discuss an IT opportunity, ask a question
           about my portfolio, or simply get in touch, I'd be pleased to hear
           from you.
         </p>
-
         <p>
           If you require a copy of my current Curriculum Vitae or would like
           further information about my professional experience and technical
@@ -64,25 +50,10 @@
 
       <section class="card">
         <h2>Contact Details</h2>
-
         <div class="contact-buttons">
           <a href="mailto:contact@techlab365.co.uk">Email</a>
-
-          <a
-            href="https://www.linkedin.com/in/antonio-gabriele-rizzo/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
-
-          <a
-            href="https://github.com/antonio-gabriele-rizzo"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
+          <a href="https://www.linkedin.com/in/antonio-gabriele-rizzo/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/antonio-gabriele-rizzo" target="_blank" rel="noopener">GitHub</a>
         </div>
       </section>
     </main>
@@ -92,71 +63,34 @@
         const currentPage =
           window.location.pathname.split("/").pop() || "index.html";
 
-        /*
-         * Always clear every active state first.
-         * This prevents stale active links when Android restores
-         * a page from its Back/Forward cache.
-         */
-        document
-          .querySelectorAll(".nav-links a, .portfolio-mobile-current a")
-          .forEach(function (link) {
-            link.classList.remove("active");
-            link.removeAttribute("aria-current");
-          });
-
-        /*
-         * Activate only the navigation link that matches
-         * the page currently being displayed.
-         */
         document
           .querySelectorAll(".nav-links a")
           .forEach(function (link) {
+            link.classList.remove("active");
+            link.removeAttribute("aria-current");
+
             if (link.getAttribute("href") === currentPage) {
               link.classList.add("active");
               link.setAttribute("aria-current", "page");
             }
           });
-
-        /*
-         * Contact does not have a mobile third-row portfolio link.
-         * The check is retained so this script remains compatible
-         * with the common TechLab365 template.
-         */
-        const mobilePortfolio = document.querySelector(
-          ".portfolio-mobile-current a"
-        );
-
-        if (
-          mobilePortfolio &&
-          mobilePortfolio.getAttribute("href") === currentPage
-        ) {
-          mobilePortfolio.classList.add("active");
-          mobilePortfolio.setAttribute("aria-current", "page");
-        }
       }
 
       document.addEventListener("DOMContentLoaded", setActiveNavigation);
-
-      /* Android/mobile Back and Forward navigation */
       window.addEventListener("pageshow", setActiveNavigation);
+      window.addEventListener("popstate", setActiveNavigation);
 
-      /* Recalculate when the page becomes visible again */
       document.addEventListener("visibilitychange", function () {
         if (document.visibilityState === "visible") {
           setActiveNavigation();
         }
       });
 
-      window.addEventListener("popstate", setActiveNavigation);
-
-      /* Clear stale states before leaving the page */
       window.addEventListener("pagehide", function () {
-        document
-          .querySelectorAll(".nav-links a, .portfolio-mobile-current a")
-          .forEach(function (link) {
-            link.classList.remove("active");
-            link.removeAttribute("aria-current");
-          });
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+          link.classList.remove("active");
+          link.removeAttribute("aria-current");
+        });
       });
     </script>
   </body>
