@@ -1,4 +1,4 @@
-/* /* ==========================================================
+/* ==========================================================
    TechLab365 - About Page 
    ========================================================== */
 
@@ -371,6 +371,39 @@ body {
 }
 
 /* ==========================================================
+   ACTION BUTTONS
+   ========================================================== */
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.action-buttons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.4rem;
+  border: 2px solid #00a8ff;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+  background: transparent;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.action-buttons a:hover,
+.action-buttons a:focus-visible {
+  background: #00a8ff;
+}
+
+/* ==========================================================
    MOBILE
    ========================================================== */
 
@@ -500,8 +533,23 @@ body {
     height: 90px;
   }
 
-  .certification-content h3 {
+   .certification-content h3 {
     font-size: 1.15rem;
+  }
+
+  /* ----------------------------------------------------------
+     MOBILE ACTION BUTTONS
+     ---------------------------------------------------------- */
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .action-buttons a {
+    width: 100%;
+    min-height: 48px;
   }
 }
 
@@ -542,3 +590,4 @@ body {
     justify-content: center;
   }
 }
+
